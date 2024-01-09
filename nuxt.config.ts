@@ -6,10 +6,10 @@ export default defineNuxtConfig({
       titleTemplate: 'Arian Derida Hamami',
     }
   },
-  css: ['~/assets/main.css'],
+  css: ['~/assets/css/main.css'],
   modules: [
-    '@nuxtjs/tailwindcss',
     'nuxt-svgo',
+    '@nuxt/ui',
   ],
   svgo: {
     componentPrefix: 'icon',

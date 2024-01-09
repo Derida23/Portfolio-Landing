@@ -1,6 +1,6 @@
 <template>
   <h1 class="header-name">
-    Arian Derida
+    Arian Derida Hamami
   </h1>
   <h2 class="header-position">
     Frontend Engineer
@@ -16,11 +16,11 @@
   @apply lg:gap-x-4;
 
   &-name {
-    @apply text-4xl;
+    @apply sm:text-5xl;
+    @apply text-[44px];
     @apply font-bold;
     @apply tracking-tight;
     @apply text-slate-200;
-    @apply sm:text-5xl;
   }
 
   &-position {

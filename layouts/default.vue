@@ -2,20 +2,18 @@
 </script>
 
 <template>
-  <Layout>
-    <div class="container-gradient"
-      style="background: radial-gradient(600px at 1297px 211px, rgba(29, 78, 216, 0.15), transparent 80%);"></div>
+  <div class="container-gradient"
+    style="background: radial-gradient(600px at 1297px 211px, rgba(29, 78, 216, 0.15), transparent 80%);"></div>
 
-    <div class="container">
-      <div class="content">
-        <header class="content-wrapper">
-          <Header />
-          <Skill />
-        </header>
-        <slot />
-      </div>
+  <div class="container">
+    <div class="content">
+      <header class="content-wrapper">
+        <Header />
+        <Skill />
+      </header>
+      <slot />
     </div>
-  </Layout>
+  </div>
 </template>
 
 <style scoped lang="postcss">
