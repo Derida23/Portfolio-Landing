@@ -8,8 +8,10 @@ const skills = reactive<string[]>(['Typescript', 'Vue', 'Nuxt', 'React', 'Next',
     <h1 class="m-0 text-lg uppercase text-slate-200">SKILL</h1>
     <div class="flex gap-4 flex-row-items-center">
       <div v-for="(skill, index) in skills" :key="index">
-        <component :is="`Icon${skill}`" :filled="skill !== 'Next' && skill !== 'Express'"
-          class="!mb-0 text-white text-3xl" />
+        <UTooltip :text="skill" :popper="{ arrow: true, placement: 'bottom-start', offsetDistance: 10 }">
+          <component :is="`Icon${skill}`" :filled="skill !== 'Next' && skill !== 'Express'"
+            class="!mb-0 text-white text-3xl" />
+        </UTooltip>
       </div>
     </div>
   </div>

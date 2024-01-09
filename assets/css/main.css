@@ -10,3 +10,17 @@ body {
     font-family: Inter,sans-serif;
     color: #94a3b8;
 }
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-thumb {
+    background: #334763;
+}
+::-webkit-scrollbar-track {
+    background: #94a3b8;
+}

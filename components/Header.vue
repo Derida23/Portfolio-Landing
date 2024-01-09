@@ -1,6 +1,6 @@
 <template>
   <h1 class="header-name">
-    Arian Derida Hamami
+    <Name />
   </h1>
   <h2 class="header-position">
     Frontend Engineer
