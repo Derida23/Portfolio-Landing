@@ -8,8 +8,14 @@
   <div class="container">
     <div class="content">
       <header class="content-wrapper">
-        <Header />
-        <Skill />
+        <div>
+          <Header />
+          <Skill />
+          <Navigation />
+        </div>
+        <div>
+          <Social />
+        </div>
       </header>
       <slot />
     </div>
@@ -43,6 +49,7 @@
   @apply lg:grid;
   @apply lg:grid-cols-2;
   @apply lg:gap-x-4;
+  @apply lg:min-h-screen;
 
   &-wrapper {
     @apply lg:sticky;
