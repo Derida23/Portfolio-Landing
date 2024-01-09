@@ -1,41 +1,80 @@
 <script setup lang="ts">
+const route = useRoute()
+const navigation = reactive(['about', 'experience', 'projects'])
+
 </script>
 
 <template>
   <nav>
-    <ul class="mt-16 w-max">
-      <li>
-        <a href="#about" class="flex items-center py-3 group active">
-          <span class="w-16 h-px mr-4  bg-slate-200 active"></span>
-          <span
-            class="text-xs font-bold tracking-widest uppercase nav-text text-slate-200 group-hover:text-slate-200 group-focus-visible:text-slate-200">
-            about
+    <ul class="nav">
+      <li v-for="nav, index in navigation" :key="index">
+        <a :href="`#${nav}`" class="nav-link group ">
+          <span class="nav-line"
+            :class="{ 'nav-line-active': route.hash === `#${nav}` || route.hash === `` && nav === 'about' }"></span>
+          <span class="nav-title"
+            :class="{ 'nav-title-active': route.hash === `#${nav}` || route.hash === `` && nav === 'about' }">
+            {{ nav }}
           </span>
         </a>
       </li>
-      <li>
-        <a href="#experience" class="flex items-center py-3 group">
-          <span
-            class="w-8 h-px mr-4 transition-all nav-indicator bg-slate-600 group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
-          <span
-            class="text-xs font-bold tracking-widest uppercase nav-text text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">
+      <!-- <li>
+        <a href="#experience" class="nav-link group">
+          <span class=" nav-line "></span>
+          <span class="nav-title">
             experience
           </span>
         </a>
       </li>
       <li>
-        <a href="#projects" class="flex items-center py-3 group">
-          <span
-            class="w-8 h-px mr-4 transition-all nav-indicator bg-slate-600 group-hover:w-16 group-hover:bg-slate-200 group-focus-visible:w-16 group-focus-visible:bg-slate-200 motion-reduce:transition-none"></span>
-          <span
-            class="text-xs font-bold tracking-widest uppercase nav-text text-slate-500 group-hover:text-slate-200 group-focus-visible:text-slate-200">
+        <a href="#projects" class="nav-link group">
+          <span class=" nav-line "></span>
+          <span class="nav-title">
             projects
           </span>
         </a>
-      </li>
+      </li> -->
     </ul>
   </nav>
 </template>
 
 <style scoped lang="postcss">
+.nav {
+  @apply mt-16;
+  @apply w-max;
+
+  &-link {
+    @apply flex;
+    @apply items-center;
+    @apply py-3;
+  }
+
+  &-line {
+    @apply w-8;
+    @apply h-px;
+    @apply mr-4;
+    @apply transition-all;
+    @apply bg-slate-600;
+    @apply group-hover:w-16 group-hover:bg-slate-200;
+    @apply group-focus-visible:w-16 group-focus-visible:bg-slate-200;
+    @apply motion-reduce:transition-none;
+
+    &-active {
+      @apply w-16;
+      @apply bg-slate-200;
+    }
+  }
+
+  &-title {
+    @apply text-xs;
+    @apply font-bold;
+    @apply tracking-widest;
+    @apply uppercase;
+    @apply text-slate-500;
+    @apply group-hover:text-slate-200 group-focus-visible:text-slate-200;
+
+    &-active {
+      @apply text-slate-200;
+    }
+  }
+}
 </style>

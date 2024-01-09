@@ -1,7 +1,8 @@
 <script setup lang="ts"></script>
 <template>
-  <div class="pt-24 lg:w-full lg:py-24">
-    <section id="about">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+  <div class="lg:w-full ">
+    <section id="about" class="pt-24">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut
       labore et dolore
       magna
       aliqua. Volutpat lacus laoreet non curabitur. Scelerisque purus semper eget duis at tellus at. Accumsan tortor
@@ -24,7 +25,8 @@
       hendrerit dolor magna eget est lorem.
     </section>
     <br />
-    <section id="experience">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+    <section id="experience" class="pt-24">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut
       labore et dolore
       magna
       aliqua. Volutpat lacus laoreet non curabitur. Scelerisque purus semper eget duis at tellus at. Accumsan tortor
@@ -48,7 +50,8 @@
     </section>
     <br />
 
-    <section id="projects">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+    <section id="projects" class="pt-24">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+      incididunt ut
       labore et dolore
       magna
       aliqua. Volutpat lacus laoreet non curabitur. Scelerisque purus semper eget duis at tellus at. Accumsan tortor

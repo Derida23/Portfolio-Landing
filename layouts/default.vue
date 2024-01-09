@@ -2,8 +2,7 @@
 </script>
 
 <template>
-  <div class="container-gradient"
-    style="background: radial-gradient(600px at 1297px 211px, rgba(29, 78, 216, 0.15), transparent 80%);"></div>
+  <div class="container-gradient"></div>
 
   <div class="container">
     <div class="content">
@@ -42,6 +41,8 @@
     @apply duration-300;
     @apply pointer-events-none;
     @apply lg:absolute;
+
+    background: radial-gradient(600px at 1297px 211px, rgba(29, 78, 216, 0.15), transparent 80%);
   }
 }
 

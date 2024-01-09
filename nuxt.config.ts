@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   modules: [
     'nuxt-svgo',
     '@nuxt/ui',
+    '@vueuse/nuxt',
   ],
   svgo: {
     componentPrefix: 'icon',

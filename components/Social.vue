@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex flex-row gap-x-6">
+  <div class="social">
     <NuxtLink to="https://github.com/Derida23" target="_blank">
       <IconGithub class="text-gray-400 hover:text-white !mb-0 text-2xl" />
     </NuxtLink>
@@ -15,4 +15,9 @@
 </template>
 
 <style scoped lang="postcss">
+.social {
+  @apply flex;
+  @apply flex-row;
+  @apply gap-x-6;
+}
 </style>
