@@ -8,9 +8,10 @@ export default defineNuxtConfig({
   },
   css: ['~/assets/css/main.css'],
   modules: [
-    'nuxt-svgo',
     '@nuxt/ui',
     '@vueuse/nuxt',
+    '@pinia/nuxt',
+    'nuxt-svgo',
   ],
   svgo: {
     componentPrefix: 'icon',

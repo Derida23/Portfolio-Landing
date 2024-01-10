@@ -1,18 +1,21 @@
 <script setup lang="ts">
 const route = useRoute()
-const navigation = reactive(['about', 'experience', 'projects'])
+const navigations = reactive(['about', 'experience', 'projects'])
 
+const store = useNav()
+const { navigation } = storeToRefs(store)
+const { setNav } = store
 </script>
 
 <template>
   <nav>
     <ul class="nav">
-      <li v-for="nav, index in navigation" :key="index">
-        <a :href="`#${nav}`" class="nav-link group ">
+      <li v-for="nav, index in navigations" :key="index">
+        <a :href="`#${nav}`" class="nav-link group" @click="setNav(nav)">
           <span class="nav-line"
-            :class="{ 'nav-line-active': route.hash === `#${nav}` || route.hash === `` && nav === 'about' }"></span>
+            :class="{ 'nav-line-active': navigation === nav || navigation === `` && nav === 'about' }"></span>
           <span class="nav-title"
-            :class="{ 'nav-title-active': route.hash === `#${nav}` || route.hash === `` && nav === 'about' }">
+            :class="{ 'nav-title-active': navigation === nav || navigation === `` && nav === 'about' }">
             {{ nav }}
           </span>
         </a>

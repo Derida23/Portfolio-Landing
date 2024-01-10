@@ -1,7 +1,38 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { ref } from 'vue'
+import { useIntersectionObserver } from '@vueuse/core'
+
+const about = ref(null)
+const experience = ref(null)
+const projects = ref(null)
+
+const { setNav } = useNav()
+
+useIntersectionObserver(
+  about,
+  ([{ isIntersecting }]) => {
+    if (isIntersecting) setNav('about')
+  },
+)
+
+useIntersectionObserver(
+  experience,
+  ([{ isIntersecting }]) => {
+    if (isIntersecting) setNav('experience')
+  },
+)
+
+useIntersectionObserver(
+  projects,
+  ([{ isIntersecting }]) => {
+    if (isIntersecting) setNav('projects')
+  },
+)
+</script>
 <template>
-  <div class="lg:w-full ">
-    <section id="about" class="pt-24">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+  <div class="lg:w-full pb-24 ">
+    <section id="about" ref="about" class="pt-24">Lorem
+      ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
       incididunt ut
       labore et dolore
       magna
@@ -24,8 +55,10 @@
       pretium fusce id velit ut. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Massa ultricies mi quis
       hendrerit dolor magna eget est lorem.
     </section>
+
     <br />
-    <section id="experience" class="pt-24">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    <section id="experience" ref="experience" class="pt-24">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+      do eiusmod tempor
       incididunt ut
       labore et dolore
       magna
@@ -48,9 +81,12 @@
       pretium fusce id velit ut. Molestie ac feugiat sed lectus vestibulum mattis ullamcorper. Massa ultricies mi quis
       hendrerit dolor magna eget est lorem.
     </section>
+
     <br />
 
-    <section id="projects" class="pt-24">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+    <section id="projects" ref="projects" class="pt-24">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+      eiusmod tempor
       incididunt ut
       labore et dolore
       magna
