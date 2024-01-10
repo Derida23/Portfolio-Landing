@@ -20,22 +20,6 @@ const { setNav } = store
           </span>
         </a>
       </li>
-      <!-- <li>
-        <a href="#experience" class="nav-link group">
-          <span class=" nav-line "></span>
-          <span class="nav-title">
-            experience
-          </span>
-        </a>
-      </li>
-      <li>
-        <a href="#projects" class="nav-link group">
-          <span class=" nav-line "></span>
-          <span class="nav-title">
-            projects
-          </span>
-        </a>
-      </li> -->
     </ul>
   </nav>
 </template>

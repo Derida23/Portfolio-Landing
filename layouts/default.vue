@@ -8,12 +8,12 @@
     <div class="content">
       <header class="content-wrapper">
         <div>
-          <Header />
-          <Skill />
-          <Navigation />
+          <LayoutHeader />
+          <LayoutSkill />
+          <LayoutNavigation />
         </div>
         <div>
-          <Social />
+          <LayoutSocial />
         </div>
       </header>
       <slot />
