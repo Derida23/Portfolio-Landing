@@ -24,31 +24,35 @@ useIntersectionObserver(
         class="experience group lg:group-hover/list:opacity-50">
         <div class="experience-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"></div>
 
-        <div class="experience-timeline hidden lg:flex w-20 h-20 rounded-2xl bg-white">
-          <img :src="`/images/${experience.image}`" alt="privy" class="w-20 h-20 rounded-2xl" />
+        <div class="experience-timeline experience-company">
+          <img :src="`/images/${experience.image}`" :alt="experience.company" class="experience-company-avatar" />
         </div>
         <div class="experience-content">
-          <h3 class="experience-content-title">
-            <div>
-              <a class="experience-content-link  group/link" :href="experience.web" target="_blank" rel="noreferrer">
-                <span class="experience-content-position"></span>
-                <span class="inline-block">{{ experience.position }} · {{ experience.company }}</span>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                  class="experience-content-svg" aria-hidden="true">
-                  <path fill-rule="evenodd" :d="`${svgPath}`" clip-rule="evenodd"></path>
-                </svg>
-              </a>
-            </div>
-            <p class="experience-timeline"> {{ experience.date }}</p>
-          </h3>
-          <p ref="experience" class="experience-content-jobdesk">{{ experience.description }}</p>
-          <ul class="experience-content-tech">
-            <li v-for=" technology, index  in  experience.technology " :key="index" class="experience-content-tech-card">
-              <div class="experience-content-tech-title">
-                {{ technology }}
+          <div v-for="role, idxRole in experience.roles" :key="idxRole"
+            :class="{ 'mb-10': experience.roles.length > 1 && idxRole === 0 }">
+            <h3 class="experience-content-title">
+              <div>
+                <a class="experience-content-link  group/link" :href="experience.web" target="_blank" rel="noreferrer">
+                  <span class="experience-content-position"></span>
+                  <span class="inline-block">{{ role.position }} · {{ experience.company }}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                    class="experience-content-svg" aria-hidden="true">
+                    <path fill-rule="evenodd" :d="`${svgPath}`" clip-rule="evenodd"></path>
+                  </svg>
+                </a>
               </div>
-            </li>
-          </ul>
+              <p class="experience-timeline"> {{ role.date }}</p>
+            </h3>
+            <p ref="experience" class="experience-content-jobdesk">{{ role.description }}</p>
+            <ul class="experience-content-tech">
+              <li v-for=" technology, idxTech  in  role.technology " :key="idxTech" class="experience-content-tech-card">
+                <div class="experience-content-tech-title">
+                  {{ technology }}
+                </div>
+              </li>
+            </ul>
+
+          </div>
         </div>
       </div>
     </ol>
@@ -92,6 +96,22 @@ useIntersectionObserver(
     @apply uppercase;
     @apply text-slate-500;
     @apply sm:col-span-2;
+  }
+
+  &-company {
+    @apply hidden;
+    @apply lg:flex;
+    @apply w-20;
+    @apply h-20;
+    @apply rounded-2xl;
+    @apply bg-white;
+
+    &-avatar {
+      @apply w-20;
+      @apply h-20;
+      @apply object-contain;
+      @apply rounded-2xl;
+    }
   }
 
   &-content {
