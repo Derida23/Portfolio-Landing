@@ -1,7 +1,7 @@
 <!-- components/TypingEffect.vue -->
 <template>
   <div>
-    <p class="flex items-center gap-x-1">
+    <p class=" lg:flex items-center gap-x-1">
       <span>{{ typedText }}</span>
       <span class="cursor !pb-1"> |</span>
     </p>

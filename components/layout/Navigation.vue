@@ -28,6 +28,8 @@ const { setNav } = store
 .nav {
   @apply mt-16;
   @apply w-max;
+  @apply hidden;
+  @apply lg:block;
 
   &-link {
     @apply flex;
