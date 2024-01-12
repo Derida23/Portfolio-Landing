@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { experiences, svgPath } from '@/constants'
+import { svgPath } from '@/constants'
 
-
-const experience = ref(null)
 const { setNav } = useNav()
+const experience = ref(null)
 
 useIntersectionObserver(
   experience,
@@ -11,6 +10,27 @@ useIntersectionObserver(
     if (isIntersecting) setNav('experience')
   },
 )
+interface IExperience {
+  company: string
+  web: string
+  image: string
+  roles: IRole[]
+
+}
+interface IRole {
+  position: string
+  date: string
+  description: string
+  technology: string[]
+}
+
+const props = defineProps({
+  experiences: {
+    type: Array as PropType<IExperience[]>,
+    default: () => []
+  }
+})
+
 </script>
 
 <template>
@@ -21,6 +41,7 @@ useIntersectionObserver(
     </div>
     <ol class="group/list">
       <div v-for="experience, index in  experiences " :key="index"
+        :ref="index === 1 || index === experiences.length - 1 ? 'experience' : undefined"
         class="experience group lg:group-hover/list:opacity-50">
         <div class="experience-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"></div>
 
@@ -43,7 +64,7 @@ useIntersectionObserver(
               </div>
               <p class="experience-timeline"> {{ role.date }}</p>
             </h3>
-            <p ref="experience" class="experience-content-jobdesk">{{ role.description }}</p>
+            <p class="experience-content-jobdesk">{{ role.description }}</p>
             <ul class="experience-content-tech">
               <li v-for=" technology, idxTech  in  role.technology " :key="idxTech" class="experience-content-tech-card">
                 <div class="experience-content-tech-title">
@@ -77,7 +98,7 @@ useIntersectionObserver(
     @apply -inset-y-4;
     @apply z-0;
     @apply hidden;
-    @apply rounded-md;
+    @apply rounded-xl;
     @apply transition;
     @apply motion-reduce:transition-none;
     @apply lg:-inset-x-6;

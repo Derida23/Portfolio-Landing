@@ -6,6 +6,9 @@ export default defineNuxtConfig({
       titleTemplate: 'Arian Derida Hamami',
     }
   },
+  imports: {
+    dirs: ['stores', 'composables/api'],
+  },
   css: ['~/assets/css/main.css'],
   modules: [
     '@nuxt/ui',

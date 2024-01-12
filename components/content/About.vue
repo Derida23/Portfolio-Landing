@@ -1,19 +1,38 @@
+<script setup lang="ts">
+const { setNav } = useNav()
+const about = ref(null)
+
+useIntersectionObserver(
+  about,
+  ([{ isIntersecting }]) => {
+    if (isIntersecting) setNav('about')
+  },
+)
+
+interface IAbout {
+  first_paragraph: string
+  second_paragraph: string
+  third_paragraph: string
+}
+
+const props = defineProps({
+  abouts: Object as PropType<IAbout>,
+})
+
+</script>
 <template>
   <div>
     <div class="about-header">
       <h2 class="about-title">About</h2>
     </div>
-    <p class="mb-4">
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem doloribus eius repellendus, odit recusandae nemo
-      minus vitae nam nostrum qui explicabo rerum numquam molestias esse facere corrupti aut eum placeat! Lorem, ipsum
-      dolor sit amet consectetur adipisicing elit.
+    <p class="mb-4" ref="about">
+      {{ abouts?.first_paragraph }}
     </p>
     <p class="mb-4">
-      Vero harum! Minus laudantium id natus atque ipsam? lorem ipsum dolor sit amet consectetur adipisicing elit.
-      Distinctio molestiae eum nostrum explicabo optio, quam cupiditate ad blanditiis eius architecto adipisci earum
+      {{ abouts?.second_paragraph }}
     </p>
     <p class="mb-0 sm:mb-4">
-      Consectetur adipisicing elit lorem ipsum dolor sit amet . Harum, tenetur natus? Fuga, sequi?
+      {{ abouts?.third_paragraph }}
     </p>
   </div>
 </template>
