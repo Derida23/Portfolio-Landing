@@ -23,16 +23,16 @@ useIntersectionObserver(
 )
 </script>
 <template>
-  <div class="lg:w-full pb-24 ">
-    <section id="about" ref="about" class="pt-24">
+  <div class="lg:w-full pb-10 lg:pb-14 xl:pb-24 ">
+    <section id="about" ref="about" class="pt-10 md:pt-14 xl:pt-24">
       <ContentAbout />
     </section>
 
-    <section id="experience" class="pt-24">
+    <section id="experience" class="pt-10 md:pt-14 xl:pt-24">
       <ContentExperience />
     </section>
 
-    <section id="projects" ref="projects" class="pt-24">
+    <section id="projects" ref="projects" class="pt-10 md:pt-14 xl:pt-24">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
       eiusmod tempor
       incididunt ut

@@ -59,7 +59,8 @@
     @apply lg:max-h-screen;
     @apply lg:flex-col;
     @apply lg:justify-between;
-    @apply lg:py-24;
+    @apply lg:py-14;
+    @apply xl:py-24;
   }
 }
 </style>

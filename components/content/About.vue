@@ -12,7 +12,7 @@
       Vero harum! Minus laudantium id natus atque ipsam? lorem ipsum dolor sit amet consectetur adipisicing elit.
       Distinctio molestiae eum nostrum explicabo optio, quam cupiditate ad blanditiis eius architecto adipisci earum
     </p>
-    <p class="mb-4">
+    <p class="mb-0 sm:mb-4">
       Consectetur adipisicing elit lorem ipsum dolor sit amet . Harum, tenetur natus? Fuga, sequi?
     </p>
   </div>
