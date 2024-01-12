@@ -29,7 +29,7 @@ export const experiences: IExperience[] = [
   {
     company: 'Icemoon',
     web: 'https://www.instagram.com/icemoon.id/',
-    image: 'freelance.png',
+    image: 'freelance.jpeg',
     roles: [
       {
         position: 'Software Engineer',
@@ -55,7 +55,7 @@ export const experiences: IExperience[] = [
   {
     company: 'Virus Media',
     web: 'https://virus.co.id/',
-    image: 'virus.png',
+    image: 'virus.jpeg',
     roles: [
       {
         position: 'UI/UX Designer',
