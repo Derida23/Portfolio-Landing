@@ -5,8 +5,8 @@
   <h2 class="header-position">
     Frontend Engineer
   </h2>
-  <p class="header-description">Lorem Ipsum is simply dummy text of the printing and typesetting
-    industry.</p>
+  <p class="header-description">Build accessible and inclusive products, along with digital experiences for the web.
+  </p>
 </template>
 
 <style scoped lang="postcss">
@@ -33,7 +33,7 @@
   }
 
   &-description {
-    @apply max-w-xs;
+    @apply max-w-sm;
     @apply mt-4;
     @apply leading-normal
   }
