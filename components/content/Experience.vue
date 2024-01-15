@@ -35,9 +35,8 @@ const props = defineProps({
 
 <template>
   <div>
-    <div
-      class="sticky top-0 z-20 w-screen px-6 py-5 mb-4 -mx-6 bg-slate-900/75 backdrop-blur md:-mx-12 md:px-12 lg:sr-only lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0 lg:opacity-0">
-      <h2 class="text-sm font-bold tracking-widest uppercase text-slate-200 lg:sr-only">Experience</h2>
+    <div class="experience-header">
+      <h2 class="experience-header-title">Experience</h2>
     </div>
     <ol class="group/list">
       <div v-for="experience, index in  experiences " :key="index"
@@ -92,6 +91,40 @@ const props = defineProps({
   @apply md:gap-4;
   @apply lg:hover:opacity-100;
 
+  &-header {
+    @apply sticky;
+    @apply top-0;
+    @apply z-20;
+    @apply w-screen;
+    @apply px-6;
+    @apply py-5;
+    @apply mb-4;
+    @apply -mx-6;
+    @apply bg-slate-200/10;
+    @apply dark:bg-slate-900/75;
+    @apply backdrop-blur;
+    @apply md:-mx-12;
+    @apply md:px-12;
+    @apply lg:sr-only;
+    @apply lg:relative;
+    @apply lg:top-auto;
+    @apply lg:mx-auto;
+    @apply lg:w-full;
+    @apply lg:px-0;
+    @apply lg:py-0;
+    @apply lg:opacity-0;
+
+    &-title {
+      @apply text-sm;
+      @apply font-bold;
+      @apply tracking-widest;
+      @apply uppercase;
+      @apply text-slate-900;
+      @apply dark:text-slate-200;
+      @apply lg:sr-only;
+    }
+  }
+
   &-hover {
     @apply absolute;
     @apply -inset-x-4;
@@ -103,8 +136,10 @@ const props = defineProps({
     @apply motion-reduce:transition-none;
     @apply lg:-inset-x-6;
     @apply lg:block;
-    @apply lg:group-hover:bg-slate-800/50;
-    @apply lg:group-hover:drop-shadow-lg;
+    @apply lg:group-hover:bg-slate-200/50;
+    @apply dark:lg:group-hover:bg-slate-800/50;
+    @apply lg:group-hover:drop-shadow-sm;
+    @apply dark:lg:group-hover:drop-shadow-lg;
   }
 
   &-timeline {
@@ -115,21 +150,29 @@ const props = defineProps({
     @apply font-bold;
     @apply tracking-wide;
     @apply uppercase;
-    @apply text-slate-500;
+    @apply text-slate-900;
+    @apply dark:text-slate-500;
     @apply sm:col-span-2;
   }
 
   &-company {
     @apply hidden;
     @apply lg:flex;
+    @apply lg:justify-center;
+    @apply lg:items-center;
     @apply w-20;
     @apply h-20;
     @apply rounded-2xl;
     @apply bg-white;
+    @apply border-[1px];
+    @apply border-slate-200;
+    @apply dark:border-0;
 
     &-avatar {
-      @apply w-20;
-      @apply h-20;
+      @apply w-[70px];
+      @apply h-[70px];
+      @apply dark:w-20;
+      @apply dark:h-20;
       @apply object-contain;
       @apply rounded-2xl;
     }
@@ -142,7 +185,8 @@ const props = defineProps({
     &-title {
       @apply font-medium;
       @apply leading-snug;
-      @apply text-slate-200;
+      @apply text-slate-900;
+      @apply dark:text-slate-200;
     }
 
     &-link {
@@ -151,9 +195,12 @@ const props = defineProps({
       @apply text-base;
       @apply font-bold;
       @apply leading-tight;
-      @apply text-slate-200;
-      @apply hover:text-teal-300;
-      @apply focus-visible:text-teal-300;
+      @apply text-slate-900;
+      @apply dark:text-slate-200;
+      @apply hover:text-teal-500;
+      @apply dark:hover:text-teal-300;
+      @apply focus-visible:text-teal-500;
+      @apply dark:focus-visible:text-teal-300;
     }
 
     &-position {
@@ -207,9 +254,11 @@ const props = defineProps({
         @apply text-xs;
         @apply font-medium;
         @apply leading-5;
-        @apply text-teal-300;
+        @apply text-teal-500;
+        @apply dark:text-teal-300;
         @apply rounded-full;
-        @apply bg-teal-400/10;
+        @apply bg-teal-500/10;
+        @apply dark:bg-teal-400/10;
       }
     }
   }

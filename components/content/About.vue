@@ -47,7 +47,8 @@ const props = defineProps({
   @apply py-5;
   @apply mb-4;
   @apply -mx-6;
-  @apply bg-slate-900/75;
+  @apply bg-slate-200/10;
+  @apply dark:bg-slate-900/75;
   @apply backdrop-blur;
   @apply md:-mx-12;
   @apply md:px-12;
@@ -66,7 +67,8 @@ const props = defineProps({
   @apply font-bold;
   @apply tracking-widest;
   @apply uppercase;
-  @apply text-slate-200;
+  @apply text-slate-900;
+  @apply dark:text-slate-200;
   @apply lg:sr-only;
 }
 </style>
