@@ -9,7 +9,7 @@ import { skills } from '@/constants'
       <div v-for="(skill, index) in skills" :key="index">
         <UTooltip :text="skill" :popper="{ arrow: true, placement: 'bottom-start', offsetDistance: 10 }">
           <component :is="`Icon${skill}`" :filled="skill !== 'Next' && skill !== 'Express'"
-            class="!mb-0 text-white text-2xl sm:text-3xl" />
+            class="!mb-0 text-slate-900 dark:text-slate-200 text-2xl sm:text-3xl" />
         </UTooltip>
       </div>
     </div>
@@ -27,7 +27,9 @@ import { skills } from '@/constants'
     @apply m-0;
     @apply text-lg;
     @apply uppercase;
-    @apply text-slate-200;
+    @apply font-semibold;
+    @apply text-slate-900;
+    @apply dark:text-slate-200;
   }
 
   &-wrapper {

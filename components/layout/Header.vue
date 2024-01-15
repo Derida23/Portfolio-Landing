@@ -20,7 +20,8 @@
     @apply text-[44px];
     @apply font-bold;
     @apply tracking-tight;
-    @apply text-slate-200;
+    @apply text-slate-900;
+    @apply dark:text-slate-200;
   }
 
   &-position {
@@ -28,8 +29,9 @@
     @apply text-lg;
     @apply font-medium;
     @apply tracking-tight;
-    @apply text-slate-200;
-    @apply sm:text-xl
+    @apply sm:text-xl;
+    @apply text-slate-900;
+    @apply dark:text-slate-200;
   }
 
   &-description {

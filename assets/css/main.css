@@ -5,10 +5,12 @@
 } */
 
 body {
-    background: #0F172A;
-    height: 100%;
+    @apply bg-stone-50;
+    @apply dark:bg-slate-900;
+    @apply text-slate-900;
+    @apply dark:text-slate-400;
+    @apply h-full;
     font-family: Inter,sans-serif;
-    color: #94a3b8;
 }
 html {
   scroll-behavior: smooth;
@@ -20,7 +22,10 @@ html {
 }
 ::-webkit-scrollbar-thumb {
     background: #334763;
+    @apply bg-slate-400;
+    @apply dark:bg-[#334763];
 }
 ::-webkit-scrollbar-track {
-    background: #94a3b8;
+    @apply bg-[#334763];
+    @apply dark:bg-slate-400;
 }

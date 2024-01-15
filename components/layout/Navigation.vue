@@ -43,13 +43,14 @@ const { setNav } = store
     @apply mr-4;
     @apply transition-all;
     @apply bg-slate-600;
-    @apply group-hover:w-16 group-hover:bg-slate-200;
-    @apply group-focus-visible:w-16 group-focus-visible:bg-slate-200;
+    @apply group-hover:w-16 group-hover:bg-slate-900 dark:group-hover:bg-slate-200;
+    @apply group-focus-visible:w-16 group-focus-visible:bg-slate-900 dark:group-focus-visible:bg-slate-200;
     @apply motion-reduce:transition-none;
 
     &-active {
       @apply w-16;
-      @apply bg-slate-200;
+      @apply bg-slate-900;
+      @apply dark:bg-slate-200;
     }
   }
 
@@ -59,10 +60,11 @@ const { setNav } = store
     @apply tracking-widest;
     @apply uppercase;
     @apply text-slate-500;
-    @apply group-hover:text-slate-200 group-focus-visible:text-slate-200;
+    @apply group-hover:text-slate-900 dark:group-hover:text-slate-200 group-focus-visible:text-slate-900 dark:group-focus-visible:text-slate-200;
 
     &-active {
-      @apply text-slate-200;
+      @apply text-slate-900;
+      @apply dark:text-slate-200;
     }
   }
 }

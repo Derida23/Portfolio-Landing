@@ -15,7 +15,13 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@pinia/nuxt',
     'nuxt-svgo',
+    '@nuxtjs/color-mode'
+
   ],
+  colorMode: {
+    preference: 'dark',
+    classSuffix: ''
+  },
   svgo: {
     componentPrefix: 'icon',
   },
