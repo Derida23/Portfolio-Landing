@@ -1,6 +1,5 @@
 <script setup lang="ts">
-const route = useRoute()
-const navigations = reactive(['about', 'experience', 'projects'])
+const navigations = reactive(['about', 'experience', 'project'])
 
 const store = useNav()
 const { navigation } = storeToRefs(store)

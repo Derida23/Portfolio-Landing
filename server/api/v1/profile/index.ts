@@ -9,7 +9,7 @@ export default defineEventHandler(() => {
       third_paragraph: 'To see more about what I`ve been doing for the past 5 years, you can check the next section.'
     },
     experiences,
-    projects: []
+    projects: experiences
   }
 
   return {

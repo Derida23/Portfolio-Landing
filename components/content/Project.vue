@@ -1,19 +1,32 @@
 <script setup lang="ts">
 import { svgPath } from '@/constants'
-import { type IExperience } from '@/types';
 
 const { setNav } = useNav()
-const experience = ref(null)
+const project = ref(null)
 
 useIntersectionObserver(
-  experience,
+  project,
   ([{ isIntersecting }]) => {
-    if (isIntersecting) setNav('experience')
+    if (isIntersecting) setNav('project')
   },
 )
+interface IProjects {
+  company: string
+  web: string
+  image: string
+  roles: IRole[]
+
+}
+interface IRole {
+  position: string
+  date: string
+  description: string
+  technology: string[]
+}
+
 const props = defineProps({
-  experiences: {
-    type: Array as PropType<IExperience[]>,
+  projects: {
+    type: Array as PropType<IProjects[]>,
     default: () => []
   }
 })
@@ -22,37 +35,36 @@ const props = defineProps({
 
 <template>
   <div>
-    <div class="experience-header">
-      <h2 class="experience-header-title">Experience</h2>
+    <div class="project-header">
+      <h2 class="project-header-title">Project</h2>
     </div>
     <ol class="group/list">
-      <div v-for="experience, index in  experiences " :key="index" :ref="index !== 0 ? 'experience' : undefined"
-        class="experience group lg:group-hover/list:opacity-50">
-        <div class="experience-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"></div>
+      <div ref="project" class="project group lg:group-hover/list:opacity-50">
+        <div class="project-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"></div>
 
-        <div class="experience-timeline experience-company">
-          <img :src="`/images/${experience.image}`" :alt="experience.company" class="experience-company-avatar" />
+        <div class="project-timeline project-company">
+          <img src="https://i.ibb.co/2cQ3Jhx/pixos.jpg" alt="image" class="project-company-avatar" />
         </div>
-        <div class="experience-content">
-          <div v-for="role, idxRole in experience.roles" :key="idxRole"
-            :class="{ 'mb-10': experience.roles.length > 1 && idxRole === 0 }">
-            <h3 class="experience-content-title">
+        <div class="project-content">
+          <div v-for="role, idxRole in projects[0].roles" :key="idxRole"
+            :class="{ 'mb-10': projects[0].roles.length > 1 && idxRole === 0 }">
+            <h3 class="project-content-title">
               <div>
-                <a class="experience-content-link  group/link" :href="experience.web" target="_blank" rel="noreferrer">
-                  <span class="experience-content-position"></span>
-                  <span class="inline-block">{{ role.position }} · {{ experience.company }}</span>
+                <a class="project-content-link  group/link" :href="projects[0].web" target="_blank" rel="noreferrer">
+                  <span class="project-content-position"></span>
+                  <span class="inline-block">Pixos Application · Point of Sale</span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
-                    class="experience-content-svg" aria-hidden="true">
+                    class="project-content-svg" aria-hidden="true">
                     <path fill-rule="evenodd" :d="`${svgPath}`" clip-rule="evenodd"></path>
                   </svg>
                 </a>
               </div>
-              <p class="experience-timeline"> {{ role.date }}</p>
+              <p class="project-timeline">personal project</p>
             </h3>
-            <p class="experience-content-jobdesk">{{ role.description }}</p>
-            <ul class="experience-content-tech">
-              <li v-for=" technology, idxTech  in  role.technology " :key="idxTech" class="experience-content-tech-card">
-                <div class="experience-content-tech-title">
+            <p class="project-content-jobdesk">{{ role.description }}</p>
+            <ul class="project-content-tech">
+              <li v-for=" technology, idxTech  in  role.technology " :key="idxTech" class="project-content-tech-card">
+                <div class="project-content-tech-title">
                   {{ technology }}
                 </div>
               </li>
@@ -66,7 +78,7 @@ const props = defineProps({
 </template>
 
 <style scoped lang="postcss">
-.experience {
+.project {
   @apply relative;
   @apply grid;
   @apply pb-1;
@@ -146,21 +158,21 @@ const props = defineProps({
     @apply lg:flex;
     @apply lg:justify-center;
     @apply lg:items-center;
-    @apply w-20;
+    @apply w-24;
     @apply h-20;
-    @apply rounded-2xl;
+    @apply rounded-xl;
     @apply bg-white;
     @apply border-[1px];
     @apply border-slate-200;
     @apply dark:border-0;
 
     &-avatar {
-      @apply w-[70px];
-      @apply h-[70px];
-      @apply dark:w-20;
+      @apply w-24;
+      @apply h-20;
+      @apply dark:w-24;
       @apply dark:h-20;
-      @apply object-contain;
-      @apply rounded-2xl;
+      @apply object-cover;
+      @apply rounded-xl;
     }
   }
 
