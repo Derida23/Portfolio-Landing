@@ -25,10 +25,11 @@ const props = defineProps({
     <div class="about-header">
       <h2 class="about-title">About</h2>
     </div>
+    <div v-html="abouts?.first_paragraph" />
+    <!-- <p class="mb-4" ref="about">
+        {{ abouts?.first_paragraph }}
+      </p> -->
     <p class="mb-4" ref="about">
-      {{ abouts?.first_paragraph }}
-    </p>
-    <p class="mb-4">
       {{ abouts?.second_paragraph }}
     </p>
     <p class="mb-0 sm:mb-4">
