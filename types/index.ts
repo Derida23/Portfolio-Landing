@@ -11,3 +11,13 @@ export interface IRole {
   description: string
   technology: string[]
 }
+
+export interface IProject {
+  id: number
+  brand: string
+  title: string
+  image: string
+  type: string
+  technology: string[]
+  description: string
+}

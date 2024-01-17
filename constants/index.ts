@@ -1,4 +1,4 @@
-import { type IExperience } from '@/types'
+import { type IExperience, type IProject } from '@/types'
 
 export const experiences: IExperience[] = [
   {
@@ -74,8 +74,70 @@ export const experiences: IExperience[] = [
   },
 ]
 
-export const projects: any[] = [
-
+export const projects: IProject[] = [
+  {
+    id: 1,
+    brand: 'Pixos Application',
+    title: 'Point of Sale',
+    image: 'pixos.jpeg',
+    type: 'personal project - arkdemy bootcamp',
+    description: 'Finding a job as a fresh graduate in the technology field is quite challenging. Eventually, I decided to work as a graphic designer due to having acquired this skill since high school. I joined Manxi, a retail company for printers, working in the marketing team, handling various aspects of digital marketing, promotions, social media analysis.',
+    technology: ['Express JS', 'Sequelize ORM', 'React JS', 'React Native', 'Redux Toolkit', 'Material UI', 'Native Base', 'JWT'],
+  },
+  {
+    id: 2,
+    brand: 'Dentons HPRP',
+    title: 'Lawfirm Management System',
+    image: 'dentons.jpeg',
+    type: 'internal project - virus media',
+    description: 'Finding a job as a fresh graduate in the technology field is quite challenging. Eventually, I decided to work as a graphic designer due to having acquired this skill since high school. I joined Manxi, a retail company for printers, working in the marketing team, handling various aspects of digital marketing, promotions, social media analysis.',
+    technology: ['React JS', 'Ant Design', 'Bootstrap', 'Redux Toolkit', 'Apollo GraphQL', 'Chart JS', 'Event Mitter', 'Sass',],
+  },
+  {
+    id: 3,
+    brand: 'Barmato & Salonpedia',
+    title: 'Haircut Online Booking',
+    image: 'barmato.jpeg',
+    type: 'internal project - virus media',
+    description: 'Finding a job as a fresh graduate in the technology field is quite challenging. Eventually, I decided to work as a graphic designer due to having acquired this skill since high school. I joined Manxi, a retail company for printers, working in the marketing team, handling various aspects of digital marketing, promotions, social media analysis.',
+    technology: ['React JS', 'Express JS', 'Mongo DB', 'Mongoose', 'Firebase', 'Jest', 'Multer', 'Shell JS', 'JWT', 'GraphQL', 'Sass', 'Tailwind', 'Ant Design'],
+  },
+  {
+    id: 4,
+    brand: 'Panganlokal',
+    title: 'Marketplace',
+    image: 'panganlokal.jpeg',
+    type: 'internal project - virus media',
+    description: 'Finding a job as a fresh graduate in the technology field is quite challenging. Eventually, I decided to work as a graphic designer due to having acquired this skill since high school. I joined Manxi, a retail company for printers, working in the marketing team, handling various aspects of digital marketing, promotions, social media analysis.',
+    technology: ['React JS', 'Next JS', 'Typescript', 'Express JS', 'MySQL', 'Redux Toolkit', 'Node Mailer', 'Sequelize', 'JWT', 'Ant Design', 'Firebase', 'Chart JS'],
+  },
+  {
+    id: 5,
+    brand: 'Enterprise Resource Planning',
+    title: 'Sales Device',
+    image: 'erp.jpeg',
+    type: 'internal project - virus media',
+    description: 'Finding a job as a fresh graduate in the technology field is quite challenging. Eventually, I decided to work as a graphic designer due to having acquired this skill since high school. I joined Manxi, a retail company for printers, working in the marketing team, handling various aspects of digital marketing, promotions, social media analysis.',
+    technology: ['Kotlin', 'Android', 'Emulator Testing', 'Geolocation', 'Firebase', 'Firebase Release & Monitor', 'UI Native'],
+  },
+  {
+    id: 6,
+    brand: 'SILK BBLK',
+    title: 'Locket Registration System',
+    image: 'bblk.jpeg',
+    type: 'external project - vascomm',
+    description: 'Finding a job as a fresh graduate in the technology field is quite challenging. Eventually, I decided to work as a graphic designer due to having acquired this skill since high school. I joined Manxi, a retail company for printers, working in the marketing team, handling various aspects of digital marketing, promotions, social media analysis.',
+    technology: ['React JS', 'Sass', 'Tailwind', 'Jest', 'Swiper JS', 'Crypto JS', 'Payment Gateway', 'Responsive Landing'],
+  },
+  {
+    id: 7,
+    brand: 'Boss Parfum',
+    title: 'Marketplace',
+    image: 'bossparfum.jpeg',
+    type: 'external project - vascomm',
+    description: 'Finding a job as a fresh graduate in the technology field is quite challenging. Eventually, I decided to work as a graphic designer due to having acquired this skill since high school. I joined Manxi, a retail company for printers, working in the marketing team, handling various aspects of digital marketing, promotions, social media analysis.',
+    technology: ['React JS', 'Next JS', 'Tailwind', 'Rocket Chat', 'CK Editor', 'Ant Design', 'Crypto JS', 'Chart JS'],
+  }
 ]
 
 

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { svgPath } from '@/constants'
+import { type IProject } from '@/types'
 
 const { setNav } = useNav()
 const project = ref(null)
@@ -10,23 +11,10 @@ useIntersectionObserver(
     if (isIntersecting) setNav('project')
   },
 )
-interface IProjects {
-  company: string
-  web: string
-  image: string
-  roles: IRole[]
-
-}
-interface IRole {
-  position: string
-  date: string
-  description: string
-  technology: string[]
-}
 
 const props = defineProps({
   projects: {
-    type: Array as PropType<IProjects[]>,
+    type: Array as PropType<IProject[]>,
     default: () => []
   }
 })
@@ -39,31 +27,31 @@ const props = defineProps({
       <h2 class="project-header-title">Project</h2>
     </div>
     <ol class="group/list">
-      <div ref="project" class="project group lg:group-hover/list:opacity-50">
+      <div v-for="project, index in  projects " :key="index" :ref="index !== 0 ? 'project' : undefined"
+        class="project group lg:group-hover/list:opacity-50 cursor-pointer">
         <div class="project-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"></div>
 
         <div class="project-timeline project-company">
-          <img src="https://i.ibb.co/2cQ3Jhx/pixos.jpg" alt="image" class="project-company-avatar" />
+          <img :src="`/images/${project.image}`" alt="image" class="project-company-avatar" />
         </div>
         <div class="project-content">
-          <div v-for="role, idxRole in projects[0].roles" :key="idxRole"
-            :class="{ 'mb-10': projects[0].roles.length > 1 && idxRole === 0 }">
+          <div class="mb-10">
             <h3 class="project-content-title">
               <div>
-                <a class="project-content-link  group/link" :href="projects[0].web" target="_blank" rel="noreferrer">
+                <div class="project-content-link  group/link" :href="project.id" target="_blank" rel="noreferrer">
                   <span class="project-content-position"></span>
-                  <span class="inline-block">Pixos Application · Point of Sale</span>
+                  <span class="inline-block">{{ project.brand }} · {{ project.title }}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                     class="project-content-svg" aria-hidden="true">
                     <path fill-rule="evenodd" :d="`${svgPath}`" clip-rule="evenodd"></path>
                   </svg>
-                </a>
+                </div>
               </div>
-              <p class="project-timeline">personal project</p>
+              <p class="project-timeline">{{ project.type }}</p>
             </h3>
-            <p class="project-content-jobdesk">{{ role.description }}</p>
+            <p class="project-content-jobdesk">{{ project.description }}</p>
             <ul class="project-content-tech">
-              <li v-for=" technology, idxTech  in  role.technology " :key="idxTech" class="project-content-tech-card">
+              <li v-for=" technology, idxTech  in  project.technology " :key="idxTech" class="project-content-tech-card">
                 <div class="project-content-tech-title">
                   {{ technology }}
                 </div>
@@ -158,7 +146,7 @@ const props = defineProps({
     @apply lg:flex;
     @apply lg:justify-center;
     @apply lg:items-center;
-    @apply w-24;
+    @apply w-28;
     @apply h-20;
     @apply rounded-xl;
     @apply bg-white;
@@ -167,9 +155,9 @@ const props = defineProps({
     @apply dark:border-0;
 
     &-avatar {
-      @apply w-24;
-      @apply h-20;
-      @apply dark:w-24;
+      @apply w-[110px];
+      @apply h-[78px];
+      @apply dark:w-28;
       @apply dark:h-20;
       @apply object-cover;
       @apply rounded-xl;
