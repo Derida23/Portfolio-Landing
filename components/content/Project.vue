@@ -71,7 +71,7 @@ const props = defineProps({
   @apply grid;
   @apply pb-1;
   @apply transition-all;
-  @apply mb-12;
+  @apply mb-4;
   @apply sm:grid-cols-8;
   @apply sm:gap-8;
   @apply md:gap-4;
