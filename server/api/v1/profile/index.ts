@@ -14,6 +14,13 @@ export default defineEventHandler(() => {
 
   return {
     data,
-    message: 'Success retrieve data'
+    message: 'Success retrieve data',
+    meta: {
+      pagination: {
+        limit: 10,
+        page: 1,
+        total: 100,
+      },
+    },
   }
 })

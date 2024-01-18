@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { svgPath } from '@/constants'
-import { type IProject } from '@/types'
+import type { IProject } from '@/types'
 
 const { setNav } = useNav()
 const project = ref(null)
@@ -19,6 +19,18 @@ const props = defineProps({
   }
 })
 
+
+const { getDetail } = useApiProfile()
+const isOpen = ref(false)
+const dataDetail = ref<IProject>()
+
+const onDetail = async (id: number) => {
+  isOpen.value = !isOpen.value
+  const { data, pending } = await getDetail(id)
+  dataDetail.value = data.value?.data.profile_detail
+  console.log(pending)
+}
+
 </script>
 
 <template>
@@ -28,11 +40,11 @@ const props = defineProps({
     </div>
     <ol class="group/list">
       <div v-for="project, index in  projects " :key="index" :ref="index !== 0 ? 'project' : undefined"
-        class="project group lg:group-hover/list:opacity-50 cursor-pointer">
+        class="project group lg:group-hover/list:opacity-50 cursor-pointer" @click="onDetail(project.id)">
         <div class="project-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"></div>
 
         <div class="project-timeline project-company">
-          <img :src="`/images/${project.image}`" alt="image" class="project-company-avatar" />
+          <img :src="`/images/${project.image}`" :alt="project.image" class="project-company-avatar" />
         </div>
         <div class="project-content">
           <div class="mb-10">
@@ -63,6 +75,14 @@ const props = defineProps({
       </div>
     </ol>
   </div>
+  <UModal v-model="isOpen">
+    <div class="p-4">
+      <div class="h-48">
+        asd
+        <pre>{{ dataDetail?.brand }}</pre>
+      </div>
+    </div>
+  </UModal>
 </template>
 
 <style scoped lang="postcss">
@@ -71,7 +91,7 @@ const props = defineProps({
   @apply grid;
   @apply pb-1;
   @apply transition-all;
-  @apply mb-4;
+  @apply mb-12;
   @apply sm:grid-cols-8;
   @apply sm:gap-8;
   @apply md:gap-4;

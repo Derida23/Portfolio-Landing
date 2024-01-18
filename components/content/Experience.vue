@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { svgPath } from '@/constants'
-import { type IExperience } from '@/types';
+import type { IExperience } from '@/types';
 
 const { setNav } = useNav()
 const experience = ref(null)

@@ -1,4 +1,4 @@
-import { type IExperience, type IProject } from '@/types'
+import type { IExperience, IProject } from '@/types'
 
 export const experiences: IExperience[] = [
   {

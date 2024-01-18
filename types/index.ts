@@ -5,7 +5,7 @@ export interface IExperience {
   roles: IRole[]
 
 }
-export interface IRole {
+interface IRole {
   position: string
   date: string
   description: string

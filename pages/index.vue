@@ -4,14 +4,12 @@ const loading = ref(true);
 const { getAll } = useApiProfile()
 const { data, pending } = await getAll()
 
-// Function to toggle the status after a delay
 const toggleStatus = () => {
   setTimeout(() => {
     loading.value = false;
-  }, 2000); // 3000 milliseconds (3 seconds)
+  }, 2000); // 2000 milliseconds (2 seconds)
 };
 
-// Call the function when the component is mounted
 onMounted(() => {
   toggleStatus();
 });
