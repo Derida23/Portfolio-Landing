@@ -48,7 +48,7 @@ export const experiences: IExperience[] = [
       {
         position: 'UI/UX Designer',
         date: '2021 aug - 2021 dec (fulltime)',
-        description: 'Switching Software Engineer to UI/UX Designer Because Startegic Company. my role involves designing and analyzing for a specific application. I create web and mobile application mockups based on WordPress using Figma, and generate design elements using Adobe Photoshop and Illustrator. Close collaboration with a WordPress Engineer is conducted to implement the design into the application.',
+        description: 'Switching Software Engineer to UI/UX Designer Because Startegic Company. my role involves designing and analyzing for a specific application. I create web and mobile application mockups based on WordPress using Figma, generate design elements using Adobe Photoshop or Illustrator and collaboration with a WordPress Engineer.',
         technology: ['UI Design', 'UI/UX', 'Figma', 'Adobe Photoshop', 'Adobe Illustrator', 'Wordpress', 'Elementor']
       },
       {
@@ -82,6 +82,11 @@ export const projects: IProject[] = [
     image: 'pixos.jpeg',
     type: 'personal project - arkdemy bootcamp',
     description: 'Arkademy is an educational institution with a full-stack JavaScript bootcamp. 6 week i developed a point of sale application called Pixos, covering the entire process from system requirements, fullstack and the mobile application. Additionally, I created replica applications resembling DANA and implemented a realtime chat feature.',
+    content: {
+      first_paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut.',
+      second_paragraph: 'Habitant morbi tristique senectus et netus et. Netus et malesuada fames ac turpis egestas.',
+      third_paragraph: 'Quam elementum pulvinar etiam non quam lacus. Amet venenatis urna cursus eget nunc. In metus vulputate eu scelerisque felis. Faucibus nisl tincidunt eget nullam non. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel.'
+    },
     technology: ['Express JS', 'Sequelize ORM', 'React JS', 'React Native', 'Redux Toolkit', 'Material UI', 'Native Base', 'JWT'],
   },
   {
@@ -91,6 +96,11 @@ export const projects: IProject[] = [
     image: 'dentons.jpeg',
     type: 'internal project - virus media',
     description: 'I developed this Learning Management System (LMS) specifically for Dentons HPRP, the third-largest law firm in Indonesia. As a frontend developer, I created features for financial management, human resources, a kanban board to track ongoing cases, and employee time management to generate revenue that is always up-to-date every day.',
+    content: {
+      first_paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut.',
+      second_paragraph: 'Habitant morbi tristique senectus et netus et. Netus et malesuada fames ac turpis egestas.',
+      third_paragraph: 'Quam elementum pulvinar etiam non quam lacus. Amet venenatis urna cursus eget nunc. In metus vulputate eu scelerisque felis. Faucibus nisl tincidunt eget nullam non. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel.'
+    },
     technology: ['React JS', 'Ant Design', 'Bootstrap', 'Redux Toolkit', 'Apollo GraphQL', 'Chart JS', 'Event Mitter', 'Sass',],
   },
   {
@@ -100,6 +110,11 @@ export const projects: IProject[] = [
     image: 'barmato.jpeg',
     type: 'internal project - virus media',
     description: 'The COVID-19 pandemic has forced all salons to close according to government regulations. Barmato has become a solution for people who want to receive salon treatments without leaving their homes. This system works to connect customers with the nearest salons in their area through reservations.',
+    content: {
+      first_paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut.',
+      second_paragraph: 'Habitant morbi tristique senectus et netus et. Netus et malesuada fames ac turpis egestas.',
+      third_paragraph: 'Quam elementum pulvinar etiam non quam lacus. Amet venenatis urna cursus eget nunc. In metus vulputate eu scelerisque felis. Faucibus nisl tincidunt eget nullam non. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel.'
+    },
     technology: ['React JS', 'Express JS', 'Mongo DB', 'Mongoose', 'Firebase', 'Jest', 'Multer', 'Shell JS', 'JWT', 'GraphQL', 'Sass', 'Tailwind', 'Ant Design'],
   },
   {
@@ -109,6 +124,11 @@ export const projects: IProject[] = [
     image: 'panganlokal.jpeg',
     type: 'internal project - virus media',
     description: 'One of the projects from the Ministry of Agriculture under its program to empower processed products from farmers and SMEs. The marketplace consists of a seller dashboard to optimize products, pricing, and delivery, as well as a landing page for customers to make purchases and transactions.',
+    content: {
+      first_paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut.',
+      second_paragraph: 'Habitant morbi tristique senectus et netus et. Netus et malesuada fames ac turpis egestas.',
+      third_paragraph: 'Quam elementum pulvinar etiam non quam lacus. Amet venenatis urna cursus eget nunc. In metus vulputate eu scelerisque felis. Faucibus nisl tincidunt eget nullam non. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel.'
+    },
     technology: ['React JS', 'Next JS', 'Typescript', 'Express JS', 'MySQL', 'Redux Toolkit', 'Node Mailer', 'Sequelize', 'JWT', 'Ant Design', 'Firebase', 'Chart JS'],
   },
   {
@@ -118,6 +138,11 @@ export const projects: IProject[] = [
     image: 'erp.jpeg',
     type: 'internal project - virus media',
     description: 'There are four modules in the ERP: warehouse, procurement, sales, and finance. In this team, I work on the sales module, where salespeople operate using Android devices, covering tasks such as office attendance, note-taking, and making purchases through the Android application. The sales process is then continued on the sales dashboard to undergo stocking, procurement, and financial recording processes.',
+    content: {
+      first_paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut.',
+      second_paragraph: 'Habitant morbi tristique senectus et netus et. Netus et malesuada fames ac turpis egestas.',
+      third_paragraph: 'Quam elementum pulvinar etiam non quam lacus. Amet venenatis urna cursus eget nunc. In metus vulputate eu scelerisque felis. Faucibus nisl tincidunt eget nullam non. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel.'
+    },
     technology: ['Kotlin', 'Android', 'Emulator Testing', 'Geolocation', 'Firebase', 'Firebase Release & Monitor', 'UI Native'],
   },
   {
@@ -127,6 +152,11 @@ export const projects: IProject[] = [
     image: 'bblk.jpeg',
     type: 'external project - vascomm',
     description: 'The system developed for the Surabaya Laboratory Agency is designed for the registration of vaccination booths for various types of vaccines, up to the booking of packages. We utilize the Midtrans payment gateway for financing. Additionally, the Surabaya Research Agency also sells various forms of medical equipment. This project is executed with a freelance scheme contracted by the company.',
+    content: {
+      first_paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut.',
+      second_paragraph: 'Habitant morbi tristique senectus et netus et. Netus et malesuada fames ac turpis egestas.',
+      third_paragraph: 'Quam elementum pulvinar etiam non quam lacus. Amet venenatis urna cursus eget nunc. In metus vulputate eu scelerisque felis. Faucibus nisl tincidunt eget nullam non. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel.'
+    },
     technology: ['React JS', 'Sass', 'Tailwind', 'Jest', 'Swiper JS', 'Crypto JS', 'Payment Gateway', 'Responsive Landing'],
   },
   {
@@ -136,6 +166,11 @@ export const projects: IProject[] = [
     image: 'bossparfum.jpeg',
     type: 'external project - vascomm',
     description: 'The concept of this marketplace exclusively sells perfumes from Boss Parfume and is open to sellers affiliated with the related company. This system can also be customized regarding what is sold, types of perfumes, and packages, ranging from the smallest to drum-sized.',
+    content: {
+      first_paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut.',
+      second_paragraph: 'Habitant morbi tristique senectus et netus et. Netus et malesuada fames ac turpis egestas.',
+      third_paragraph: 'Quam elementum pulvinar etiam non quam lacus. Amet venenatis urna cursus eget nunc. In metus vulputate eu scelerisque felis. Faucibus nisl tincidunt eget nullam non. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel.'
+    },
     technology: ['React JS', 'Next JS', 'Tailwind', 'Rocket Chat', 'CK Editor', 'Ant Design', 'Crypto JS', 'Chart JS'],
   }
 ]

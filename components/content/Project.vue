@@ -2,6 +2,7 @@
 import { svgPath } from '@/constants'
 import type { IProject } from '@/types'
 
+const router = useRouter()
 const { setNav } = useNav()
 const project = ref(null)
 
@@ -20,17 +21,6 @@ const props = defineProps({
 })
 
 
-const { getDetail } = useApiProfile()
-const isOpen = ref(false)
-const dataDetail = ref<IProject>()
-
-const onDetail = async (id: number) => {
-  isOpen.value = !isOpen.value
-  const { data, pending } = await getDetail(id)
-  dataDetail.value = data.value?.data.profile_detail
-  console.log(pending)
-}
-
 </script>
 
 <template>
@@ -40,7 +30,8 @@ const onDetail = async (id: number) => {
     </div>
     <ol class="group/list">
       <div v-for="project, index in  projects " :key="index" :ref="index !== 0 ? 'project' : undefined"
-        class="project group lg:group-hover/list:opacity-50 cursor-pointer" @click="onDetail(project.id)">
+        class="project group lg:group-hover/list:opacity-50 cursor-pointer"
+        @click="router.push(`/project/${project.id}`)">
         <div class="project-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"></div>
 
         <div class="project-timeline project-company">
@@ -61,7 +52,8 @@ const onDetail = async (id: number) => {
               </div>
               <p class="project-timeline">{{ project.type }}</p>
             </h3>
-            <p class="project-content-jobdesk">{{ project.description }}</p>
+            <p class="project-content-jobdesk">{{ project.description.length > 300 ? project.description.slice(0, 300) +
+              '...' : project.description }}</p>
             <ul class="project-content-tech">
               <li v-for=" technology, idxTech  in  project.technology " :key="idxTech" class="project-content-tech-card">
                 <div class="project-content-tech-title">
@@ -75,14 +67,6 @@ const onDetail = async (id: number) => {
       </div>
     </ol>
   </div>
-  <UModal v-model="isOpen">
-    <div class="p-4">
-      <div class="h-48">
-        asd
-        <pre>{{ dataDetail?.brand }}</pre>
-      </div>
-    </div>
-  </UModal>
 </template>
 
 <style scoped lang="postcss">
@@ -91,7 +75,9 @@ const onDetail = async (id: number) => {
   @apply grid;
   @apply pb-1;
   @apply transition-all;
-  @apply mb-12;
+  @apply mb-0;
+  @apply md:mb-8;
+  @apply lg:mb-12;
   @apply sm:grid-cols-8;
   @apply sm:gap-8;
   @apply md:gap-4;

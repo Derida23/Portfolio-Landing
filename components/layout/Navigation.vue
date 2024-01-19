@@ -4,11 +4,14 @@ const navigations = reactive(['about', 'experience', 'project'])
 const store = useNav()
 const { navigation } = storeToRefs(store)
 const { setNav } = store
+
+const route = useRoute()
+
 </script>
 
 <template>
   <nav>
-    <ul class="nav">
+    <ul v-if="!route.params.id" class="nav">
       <li v-for="nav, index in navigations" :key="index">
         <a :href="`#${nav}`" class="nav-link group" @click="setNav(nav)">
           <span class="nav-line"

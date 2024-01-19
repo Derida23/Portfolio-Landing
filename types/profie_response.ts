@@ -13,7 +13,7 @@ interface IParagraph {
   third_paragraph: string
 }
 
-export type ProfileListResponse = ApiResponseMeta<IProfileResponse[]>
+export type ProfileListResponse = ApiResponseMeta<IProfileResponse>
 
 
 export type ProfileDetailResponse = ApiResponse<{

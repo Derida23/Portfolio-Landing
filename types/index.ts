@@ -20,4 +20,11 @@ export interface IProject {
   type: string
   technology: string[]
   description: string
+  content: IContent
+}
+
+interface IContent {
+  first_paragraph: string
+  second_paragraph: string
+  third_paragraph: string
 }
