@@ -29,34 +29,33 @@ const props = defineProps({
       <h2 class="project-header-title">Project</h2>
     </div>
     <ol class="group/list">
-      <div v-for="project, index in  projects " :key="index" :ref="Number(index) !== 0 ? 'project' : undefined"
-        class="project group lg:group-hover/list:opacity-50 cursor-pointer"
-        @click="router.push(`/project/${project.id}`)">
+      <div v-for="pro, index in  projects " :key="index" :ref="Number(index) !== 0 ? 'project' : undefined"
+        class="project group lg:group-hover/list:opacity-50 cursor-pointer" @click="router.push(`/project/${pro.id}`)">
         <div class="project-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"
           :ref="Number(index) !== 0 ? 'project' : undefined"></div>
 
         <div class="project-timeline project-company">
-          <img :src="`/images/${project.image}`" :alt="project.image" class="project-company-avatar" />
+          <img :src="`/images/${pro.image}`" :alt="pro.image" class="project-company-avatar" />
         </div>
         <div class="project-content">
           <div class="mb-10">
             <h3 class="project-content-title">
               <div>
-                <div class="project-content-link  group/link" :href="project.id" target="_blank" rel="noreferrer">
+                <div class="project-content-link  group/link" :href="pro.id" target="_blank" rel="noreferrer">
                   <span class="project-content-position"></span>
-                  <span class="inline-block">{{ project.brand }} · {{ project.title }}</span>
+                  <span class="inline-block">{{ pro.brand }} · {{ pro.title }}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                     class="project-content-svg" aria-hidden="true">
                     <path fill-rule="evenodd" :d="`${svgPath}`" clip-rule="evenodd"></path>
                   </svg>
                 </div>
               </div>
-              <p class="project-timeline">{{ project.type }}</p>
+              <p class="project-timeline">{{ pro.type }}</p>
             </h3>
-            <p class="project-content-jobdesk">{{ project.description.length > 300 ? project.description.slice(0, 300) +
-              '...' : project.description }}</p>
+            <p class="project-content-jobdesk">{{ pro.description.length > 300 ? pro.description.slice(0, 300) +
+              '...' : pro.description }}</p>
             <ul class="project-content-tech">
-              <li v-for=" technology, idxTech  in  project.technology " :key="idxTech" class="project-content-tech-card">
+              <li v-for=" technology, idxTech  in  pro.technology " :key="idxTech" class="project-content-tech-card">
                 <div class="project-content-tech-title">
                   {{ technology }}
                 </div>

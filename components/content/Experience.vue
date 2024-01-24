@@ -3,7 +3,7 @@ import { svgPath } from '@/constants'
 import type { IExperience } from '@/types';
 
 const { setNav } = useNav()
-const experience = ref(null)
+const experience = ref([])
 
 useIntersectionObserver(
   experience,
@@ -25,22 +25,22 @@ const props = defineProps({
     <div class="experience-header">
       <h2 class="experience-header-title">Experience</h2>
     </div>
-    <ol class="group/list" ref="experience">
-      <div v-for="experience, index in  experiences " :key="index"
+    <ol class="group/list">
+      <div v-for="exp, index in  experiences " :key="index" :ref="Number(index) >= 2 ? 'experience' : undefined"
         class="experience group lg:group-hover/list:opacity-50">
         <div class="experience-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"></div>
 
         <div class="experience-timeline experience-company">
-          <img :src="`/images/${experience.image}`" :alt="experience.company" class="experience-company-avatar" />
+          <img :src="`/images/${exp.image}`" :alt="exp.company" class="experience-company-avatar" />
         </div>
         <div class="experience-content">
-          <div v-for="role, idxRole in experience.roles" :key="idxRole"
-            :class="{ 'mb-10': experience.roles.length > 1 && idxRole === 0 }">
+          <div v-for="role, idxRole in exp.roles" :key="idxRole"
+            :class="{ 'mb-10': exp.roles.length > 1 && idxRole === 0 }">
             <h3 class="experience-content-title">
               <div>
-                <a class="experience-content-link  group/link" :href="experience.web" target="_blank" rel="noreferrer">
+                <a class="experience-content-link  group/link" :href="exp.web" target="_blank" rel="noreferrer">
                   <span class="experience-content-position"></span>
-                  <span class="inline-block">{{ role.position }} · {{ experience.company }}</span>
+                  <span class="inline-block">{{ role.position }} · {{ exp.company }}</span>
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
                     class="experience-content-svg" aria-hidden="true">
                     <path fill-rule="evenodd" :d="`${svgPath}`" clip-rule="evenodd"></path>
