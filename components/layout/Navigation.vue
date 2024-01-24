@@ -6,6 +6,7 @@ const { navigation } = storeToRefs(store)
 const { setNav } = store
 
 const route = useRoute()
+console.log('navigation -> ', navigation)
 
 </script>
 
@@ -15,9 +16,9 @@ const route = useRoute()
       <li v-for="nav, index in navigations" :key="index">
         <a :href="`#${nav}`" class="nav-link group" @click="setNav(nav)">
           <span class="nav-line"
-            :class="{ 'nav-line-active': navigation === nav || navigation === `` && nav === 'about' }"></span>
+            :class="{ 'nav-line-active': navigation === nav || navigation === '' && nav === 'about' }"></span>
           <span class="nav-title"
-            :class="{ 'nav-title-active': navigation === nav || navigation === `` && nav === 'about' }">
+            :class="{ 'nav-title-active': navigation === nav || navigation === '' && nav === 'about' }">
             {{ nav }}
           </span>
         </a>

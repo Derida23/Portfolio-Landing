@@ -3,6 +3,7 @@ export const useNav = defineStore('nav', () => {
 
   const setNav = (value: String) => {
     navigation.value = value
+    console.log('store -> ', value)
 
     return true
   }
