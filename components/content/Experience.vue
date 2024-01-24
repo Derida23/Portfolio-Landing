@@ -26,11 +26,11 @@ const props = defineProps({
       <h2 class="experience-header-title">Experience</h2>
     </div>
     <ol class="group/list">
-      <div v-for="experience, index in  experiences " :key="index"
+      <div v-for="experience, index in  experiences " :key="index" ref="experience"
         class="experience group lg:group-hover/list:opacity-50">
         <div class="experience-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"></div>
 
-        <div class="experience-timeline experience-company" ref="experience">
+        <div class="experience-timeline experience-company">
           <img :src="`/images/${experience.image}`" :alt="experience.company" class="experience-company-avatar" />
         </div>
         <div class="experience-content">
