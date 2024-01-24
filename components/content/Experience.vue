@@ -30,7 +30,7 @@ const props = defineProps({
         class="experience group lg:group-hover/list:opacity-50">
         <div class="experience-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"></div>
 
-        <div class="experience-timeline experience-company" :ref="Number(index) >= 2 ? 'experience' : undefined">
+        <div class="experience-timeline experience-company" ref="experience">
           <img :src="`/images/${experience.image}`" :alt="experience.company" class="experience-company-avatar" />
         </div>
         <div class="experience-content">
