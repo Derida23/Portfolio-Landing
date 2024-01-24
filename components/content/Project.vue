@@ -32,7 +32,8 @@ const props = defineProps({
       <div v-for="project, index in  projects " :key="index" :ref="Number(index) !== 0 ? 'project' : undefined"
         class="project group lg:group-hover/list:opacity-50 cursor-pointer"
         @click="router.push(`/project/${project.id}`)">
-        <div class="project-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"></div>
+        <div class="project-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"
+          :ref="Number(index) !== 0 ? 'project' : undefined"></div>
 
         <div class="project-timeline project-company">
           <img :src="`/images/${project.image}`" :alt="project.image" class="project-company-avatar" />
