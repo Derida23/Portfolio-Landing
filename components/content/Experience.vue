@@ -3,7 +3,7 @@ import { svgPath } from '@/constants'
 import type { IExperience } from '@/types';
 
 const { setNav } = useNav()
-const experience = ref([])
+const experience = ref(null)
 
 useIntersectionObserver(
   experience,
@@ -25,8 +25,8 @@ const props = defineProps({
     <div class="experience-header">
       <h2 class="experience-header-title">Experience</h2>
     </div>
-    <ol class="group/list">
-      <div v-for="experience, index in  experiences " :key="index" ref="experience"
+    <ol class="group/list" ref="experience">
+      <div v-for="experience, index in  experiences " :key="index"
         class="experience group lg:group-hover/list:opacity-50">
         <div class="experience-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"></div>
 
