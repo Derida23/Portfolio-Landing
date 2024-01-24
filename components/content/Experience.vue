@@ -3,7 +3,7 @@ import { svgPath } from '@/constants'
 import type { IExperience } from '@/types';
 
 const { setNav } = useNav()
-const experience = ref(null)
+const experience = ref([])
 
 useIntersectionObserver(
   experience,
