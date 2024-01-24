@@ -6,7 +6,7 @@ const { navigation } = storeToRefs(store)
 const { setNav } = store
 
 const route = useRoute()
-console.log('navigation -> ', navigation)
+console.log('navigation -> ', navigation.value)
 
 </script>
 
