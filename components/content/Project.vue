@@ -20,7 +20,6 @@ const props = defineProps({
   }
 })
 
-
 </script>
 
 <template>
@@ -28,8 +27,8 @@ const props = defineProps({
     <div class="project-header">
       <h2 class="project-header-title">Project</h2>
     </div>
-    <ol class="group/list">
-      <div v-for="pro, index in  projects " :key="index" :ref="Number(index) !== 0 ? 'project' : undefined"
+    <ol class="group/list" ref="project">
+      <div v-for="pro, index in  projects " :key="index"
         class="project group lg:group-hover/list:opacity-50 cursor-pointer" @click="router.push(`/project/${pro.id}`)">
         <div class="project-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"
           :ref="Number(index) !== 0 ? 'project' : undefined"></div>
