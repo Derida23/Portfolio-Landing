@@ -26,7 +26,7 @@ const props = defineProps({
       <h2 class="experience-header-title">Experience</h2>
     </div>
     <ol class="group/list">
-      <div v-for="exp, index in  experiences " :key="index" :ref="Number(index) >= 2 ? 'experience' : undefined"
+      <div v-for="exp, index in  experiences " :key="index" ref="experience"
         class="experience group lg:group-hover/list:opacity-50">
         <div class="experience-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"></div>
 
