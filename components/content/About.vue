@@ -22,6 +22,7 @@ const props = defineProps({
 </script>
 <template>
   <div>
+    <div ref="about"></div>
     <div class="about-header">
       <h2 class="about-title">About</h2>
     </div>
