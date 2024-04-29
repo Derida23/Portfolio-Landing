@@ -19,14 +19,29 @@ const props = defineProps({
   abouts: Object as PropType<IAbout>,
 })
 
+
+const colorMode = useColorMode()
+
+const firstParagraph = computed(() => {
+  if (props.abouts?.first_paragraph) {
+    const text = props.abouts.first_paragraph.replace('text-white', 'text-slate-900');
+
+    if (colorMode.preference === 'light') {
+      return text
+    }
+    else return props.abouts.first_paragraph
+  }
+})
+
 </script>
 <template>
   <div>
     <div ref="about"></div>
+    <!-- <pre>{{ firstParagraph }}</pre> -->
     <div class="about-header">
       <h2 class="about-title">About</h2>
     </div>
-    <div v-html="abouts?.first_paragraph" />
+    <div v-html="firstParagraph" />
     <p class="mb-4" ref="about">
       {{ abouts?.second_paragraph }}
     </p>
