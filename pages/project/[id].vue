@@ -11,7 +11,7 @@ const { data: dataAll } = await getAll()
 const toggleStatus = () => {
   setTimeout(() => {
     loading.value = false;
-  }, 2000); // 2000 milliseconds (2 seconds)
+  }, 1500); // 1500 milliseconds (1.5 seconds)
 };
 
 onMounted(() => {
