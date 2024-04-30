@@ -2,7 +2,6 @@
 const colorMode = useColorMode()
 const { locale, setLocale } = useI18n()
 
-console.log(locale.value)
 </script>
 
 <template>

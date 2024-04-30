@@ -5,8 +5,7 @@
   <h2 class="header-position">
     Frontend Engineer
   </h2>
-  <p class="header-description">Build accessible and inclusive products, along with digital experiences for the web.
-  </p>
+  <p class="header-description">{{ $t('header.description') }} </p>
 </template>
 
 <style scoped lang="postcss">

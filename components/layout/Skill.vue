@@ -4,7 +4,7 @@ import { skills } from '@/constants'
 
 <template>
   <div class="skill">
-    <h1 class="skill-title">SKILL</h1>
+    <h1 class="skill-title">{{ $t('header.skill') }}</h1>
     <div class="skill-wrapper">
       <div v-for="(skill, index) in skills" :key="index">
         <UTooltip :text="skill" :popper="{ arrow: false, placement: 'bottom-start', offsetDistance: 10 }">
