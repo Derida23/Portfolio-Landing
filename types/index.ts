@@ -28,3 +28,9 @@ interface IContent {
   second_paragraph: string
   third_paragraph: string
 }
+
+export interface IAbout {
+  first_paragraph: string
+  second_paragraph: string
+  third_paragraph: string
+}

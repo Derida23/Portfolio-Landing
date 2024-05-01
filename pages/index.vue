@@ -1,8 +1,9 @@
 <script setup lang="ts">
 
+const { locale } = useI18n()
 const loading = ref(true);
 const { getAll } = useApiProfile()
-const { data, pending } = await getAll()
+const { data, pending } = await getAll(locale.value)
 
 const toggleStatus = () => {
   setTimeout(() => {

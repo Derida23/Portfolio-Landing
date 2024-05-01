@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import type { IAbout } from '~/types';
+
 const { setNav } = useNav()
 const about = ref(null)
 
@@ -9,11 +11,6 @@ useIntersectionObserver(
   },
 )
 
-interface IAbout {
-  first_paragraph: string
-  second_paragraph: string
-  third_paragraph: string
-}
 
 const props = defineProps({
   abouts: Object as PropType<IAbout>,
