@@ -3,6 +3,7 @@ import { svgPath } from '@/constants'
 import type { IExperience } from '@/types';
 
 const { setNav } = useNav()
+const { locale } = useI18n()
 const experience = ref(null)
 
 useIntersectionObserver(
@@ -51,9 +52,10 @@ const props = defineProps({
               </div>
               <p class="experience-timeline"> {{ role.date }}</p>
             </h3>
-            <p class="experience-content-jobdesk">{{ role.description }}</p>
+            <p class="experience-content-jobdesk">{{ locale === 'id' ? role.description__id : role.description }}</p>
             <ul class="experience-content-tech">
-              <li v-for=" technology, idxTech  in  role.technology " :key="idxTech" class="experience-content-tech-card">
+              <li v-for=" technology, idxTech  in  role.technology " :key="idxTech"
+                class="experience-content-tech-card">
                 <div class="experience-content-tech-title">
                   {{ technology }}
                 </div>

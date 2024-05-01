@@ -7,7 +7,6 @@ import {
 export default defineEventHandler(async (event) => {
 
   const queryParam = getQuery(event)
-  console.log(queryParam.lang)
 
   const data = {
     abouts: queryParam.lang === 'id' ? abouts__id : abouts,

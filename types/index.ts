@@ -9,6 +9,7 @@ interface IRole {
   position: string
   date: string
   description: string
+  description__id: string
   technology: string[]
 }
 
