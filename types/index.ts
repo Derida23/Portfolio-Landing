@@ -21,6 +21,7 @@ export interface IProject {
   type: string
   technology: string[]
   description: string
+  description__id: string
   content: IContent
 }
 

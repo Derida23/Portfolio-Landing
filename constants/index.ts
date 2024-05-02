@@ -102,6 +102,7 @@ export const projects: IProject[] = [
     image: 'pixos.jpeg',
     type: 'personal project - arkdemy bootcamp',
     description: 'Arkademy is an educational institution with a full-stack JavaScript bootcamp. 6 week i developed a point of sale application called Pixos, covering the entire process from system requirements, fullstack and the mobile application. Additionally, I created replica applications resembling DANA and implemented a realtime chat feature.',
+    description__id: 'Arkademy adalah lembaga pendidikan dengan bootcamp full-stack JavaScript. Selama 6 minggu, saya mengembangkan aplikasi point of sale bernama Pixos, mencakup seluruh proses dari persyaratan sistem, fullstack, hingga aplikasi mobile. Selain itu, saya membuat aplikasi tiruan yang menyerupai DANA dan mengimplementasikan fitur obrolan realtime.',
     content: {
       first_paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut.',
       second_paragraph: 'Habitant morbi tristique senectus et netus et. Netus et malesuada fames ac turpis egestas.',
@@ -116,6 +117,7 @@ export const projects: IProject[] = [
     image: 'dentons.jpeg',
     type: 'internal project - virus media',
     description: 'I developed this Learning Management System (LMS) specifically for Dentons HPRP, the third-largest law firm in Indonesia. As a frontend developer, I created features for financial management, human resources, a kanban board to track ongoing cases, and employee time management to generate revenue that is always up-to-date every day.',
+    description__id: 'Saya mengembangkan Sistem Manajemen Pembelajaran (LMS) ini khusus untuk Dentons HPRP, firma hukum terbesar ke-3 di Indonesia. Sebagai pengembang frontend, saya menciptakan fitur-fitur untuk manajemen keuangan, sumber daya manusia, papan kanban untuk melacak kasus yang sedang berlangsung, dan manajemen waktu pegawai untuk menghasilkan pendapatan yang selalu terupdate setiap hari.',
     content: {
       first_paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut.',
       second_paragraph: 'Habitant morbi tristique senectus et netus et. Netus et malesuada fames ac turpis egestas.',
@@ -130,6 +132,7 @@ export const projects: IProject[] = [
     image: 'barmato.jpeg',
     type: 'internal project - virus media',
     description: 'The COVID-19 pandemic has forced all salons to close according to government regulations. Barmato has become a solution for people who want to receive salon treatments without leaving their homes. This system works to connect customers with the nearest salons in their area through reservations.',
+    description__id: 'Pandemi COVID-19 telah memaksa semua salon untuk tutup sesuai dengan peraturan pemerintah. Barmato telah menjadi solusi bagi orang-orang yang ingin menerima perawatan salon tanpa meninggalkan rumah mereka. Sistem ini berfungsi untuk menghubungkan pelanggan dengan salon terdekat di daerah mereka melalui reservasi.',
     content: {
       first_paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut.',
       second_paragraph: 'Habitant morbi tristique senectus et netus et. Netus et malesuada fames ac turpis egestas.',
@@ -144,6 +147,7 @@ export const projects: IProject[] = [
     image: 'panganlokal.jpeg',
     type: 'internal project - virus media',
     description: 'One of the projects from the Ministry of Agriculture under its program to empower processed products from farmers and SMEs. The marketplace consists of a seller dashboard to optimize products, pricing, and delivery, as well as a landing page for customers to make purchases and transactions.',
+    description__id: 'Salah satu proyek dari Kementerian Pertanian dalam programnya untuk memberdayakan produk olahan dari petani dan UMKM. Marketplace ini terdiri dari dashboard penjual untuk mengoptimalkan produk, harga, dan pengiriman, serta halaman landing untuk pelanggan melakukan pembelian dan transaksi.',
     content: {
       first_paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut.',
       second_paragraph: 'Habitant morbi tristique senectus et netus et. Netus et malesuada fames ac turpis egestas.',
@@ -158,6 +162,7 @@ export const projects: IProject[] = [
     image: 'erp.jpeg',
     type: 'internal project - virus media',
     description: 'There are four modules in the ERP: warehouse, procurement, sales, and finance. In this team, I work on the sales module, where salespeople operate using Android devices, covering tasks such as office attendance, note-taking, and making purchases through the Android application. The sales process is then continued on the sales dashboard to undergo stocking, procurement, and financial recording processes.',
+    description__id: 'Ada empat modul dalam ERP: gudang, pengadaan, penjualan, dan keuangan. Di tim ini, saya bekerja pada modul penjualan, di mana para salesperson menggunakan perangkat Android untuk berbagai tugas seperti absensi kantor, pencatatan catatan, dan melakukan pembelian melalui aplikasi Android. Proses penjualan kemudian dilanjutkan pada dasbor penjualan untuk menjalani proses stok, pengadaan, dan pencatatan keuangan.',
     content: {
       first_paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut.',
       second_paragraph: 'Habitant morbi tristique senectus et netus et. Netus et malesuada fames ac turpis egestas.',
@@ -172,6 +177,7 @@ export const projects: IProject[] = [
     image: 'bblk.jpeg',
     type: 'external project - vascomm',
     description: 'The system developed for the Surabaya Laboratory Agency is designed for the registration of vaccination booths for various types of vaccines, up to the booking of packages. We utilize the Midtrans payment gateway for financing. Additionally, the Surabaya Research Agency also sells various forms of medical equipment. This project is executed with a freelance scheme contracted by the company.',
+    description__id: 'Sistem yang dikembangkan untuk Badan Laboratorium Surabaya ditujukan untuk pendaftaran loket vaksinasi untuk berbagai jenis vaksin, hingga pemesanan paket. Kami menggunakan gateway pembayaran Midtrans untuk pembiayaan. Selain itu, Badan Penelitian Surabaya juga menjual berbagai macam peralatan medis. Proyek ini dilaksanakan dengan skema freelance yang dikontrak oleh perusahaan.',
     content: {
       first_paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut.',
       second_paragraph: 'Habitant morbi tristique senectus et netus et. Netus et malesuada fames ac turpis egestas.',
@@ -186,6 +192,7 @@ export const projects: IProject[] = [
     image: 'bossparfum.jpeg',
     type: 'external project - vascomm',
     description: 'The concept of this marketplace exclusively sells perfumes from Boss Parfume and is open to sellers affiliated with the related company. This system can also be customized regarding what is sold, types of perfumes, and packages, ranging from the smallest to drum-sized.',
+    description__id: 'Konsep marketplace ini secara eksklusif menjual parfum dari Boss Parfume, dan terbuka untuk penjual yang berafiliasi dengan perusahaan terkait. Sistem ini juga dapat disesuaikan terkait dengan barang yang dijual, jenis-jenis parfum, dan paket, mulai dari yang terkecil hingga berukuran drum.',
     content: {
       first_paragraph: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ornare arcu dui vivamus arcu felis bibendum ut.',
       second_paragraph: 'Habitant morbi tristique senectus et netus et. Netus et malesuada fames ac turpis egestas.',
