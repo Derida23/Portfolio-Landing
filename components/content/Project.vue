@@ -21,6 +21,10 @@ const props = defineProps({
   }
 })
 
+function onDetail(id: number) {
+  router.push(`${locale.value === 'id' ? '/id' : ''}/project/${id}`)
+}
+
 </script>
 
 <template>
@@ -29,8 +33,8 @@ const props = defineProps({
       <h2 class="project-header-title">Project</h2>
     </div>
     <ol class="group/list" ref="project">
-      <div v-for="pro, index in  props.projects " :key="index"
-        class="project group lg:group-hover/list:opacity-50 cursor-pointer" @click="router.push(`/project/${pro.id}`)">
+      <div v-for="pro, index in  props.projects" :key="index"
+        class="project group lg:group-hover/list:opacity-50 cursor-pointer" @click="() => onDetail(pro.id)">
         <div class="project-hover lg:group-hover:shadow-[inset_0_1px_0_0_rgba(148, 163, 184, 0.1)]"
           :ref="Number(index) !== 0 ? 'project' : undefined"></div>
 
@@ -60,7 +64,7 @@ const props = defineProps({
               {{ pro.description.length > 300 ? pro.description.slice(0, 300) + '...' : pro.description }}
             </p>
             <ul class="project-content-tech">
-              <li v-for=" technology, idxTech  in  pro.technology " :key="idxTech" class="project-content-tech-card">
+              <li v-for="technology, idxTech  in  pro.technology" :key="idxTech" class="project-content-tech-card">
                 <div class="project-content-tech-title">
                   {{ technology }}
                 </div>
