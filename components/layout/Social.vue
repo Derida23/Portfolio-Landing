@@ -41,7 +41,7 @@ const { locale, setLocale } = useI18n()
 <style scoped lang="postcss">
 .social {
   @apply flex;
-  @apply items-center;
+  @apply items-end;
   @apply justify-between;
 
   &-wrapper {
