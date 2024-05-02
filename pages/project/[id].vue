@@ -19,6 +19,7 @@ onMounted(() => {
 });
 
 const router = useRouter()
+const { locale } = useI18n()
 const onNext = (id: number) => {
   const detailLength = dataAll.value?.data.projects.length ?? 0
   const detailIndex = dataAll.value?.data.projects.findIndex((project) => project.id === id)
@@ -27,9 +28,9 @@ const onNext = (id: number) => {
     const nextIndex = detailIndex + 1
 
     if (nextIndex < detailLength) {
-      router.push(`/project/${dataAll.value?.data.projects[nextIndex].id}`)
+      router.push(`${locale.value === 'id' ? '/id' : ''}/project/${dataAll.value?.data.projects[nextIndex].id}`)
     } else {
-      router.push(`/project/${dataAll.value?.data.projects[0].id}`)
+      router.push(`${locale.value === 'id' ? '/id' : ''}/project/${dataAll.value?.data.projects[0].id}`)
     }
   }
 
@@ -70,7 +71,7 @@ const onNext = (id: number) => {
       </div>
     </div>
     <div class="detail-navigation mt-10 ">
-      <div class="detail-navigation-btn" @click="router.push('/')">
+      <div class="detail-navigation-btn" @click="router.push(locale === 'id' ? '/id' : '')">
         <div class="detail-navigation-wrapper">
           <UIcon name="i-heroicons-arrow-long-left !mb-0" />
           Homepage
