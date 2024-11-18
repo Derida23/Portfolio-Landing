@@ -8,7 +8,7 @@ const { data, pending } = await getAll(locale.value)
 const toggleStatus = () => {
   setTimeout(() => {
     loading.value = false;
-  }, 1500); // 1500 milliseconds (1.5 seconds)
+  }, 1000);
 };
 
 onMounted(() => {

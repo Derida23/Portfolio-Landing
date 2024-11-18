@@ -11,7 +11,7 @@ const { data: dataAll } = await getAll()
 const toggleStatus = () => {
   setTimeout(() => {
     loading.value = false;
-  }, 1500); // 1500 milliseconds (1.5 seconds)
+  }, 1000);
 };
 
 onMounted(() => {
@@ -71,7 +71,7 @@ const onNext = (id: number) => {
       </div>
     </div>
     <div class="detail-navigation mt-10 ">
-      <div class="detail-navigation-btn" @click="router.push(locale === 'id' ? '/id' : '')">
+      <div class="detail-navigation-btn" @click="router.push(locale === 'id' ? '/id' : '/')">
         <div class="detail-navigation-wrapper">
           <UIcon name="i-heroicons-arrow-long-left !mb-0" />
           Homepage

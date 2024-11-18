@@ -27,12 +27,14 @@ const { locale, setLocale } = useI18n()
     </div>
     <div class="lang invisible lg:visible">
       <div class="lang-wrapper" @click="setLocale('id')">
-        <p class="text-center">Bahasa</p>
-        <div :class="{ 'lang-active': locale === 'id' }" />
+        <div :class="{ 'lang-active': locale === 'id' }">
+          <p class="text-center">Bahasa</p>
+        </div>
       </div>
       <div class="lang-wrapper" @click="setLocale('en')">
-        <p class="text-center">English</p>
-        <div :class="{ 'lang-active': locale === 'en' }" />
+        <div :class="{ 'lang-active': locale === 'en' }">
+          <p class="text-center">English</p>
+        </div>
       </div>
     </div>
   </div>
@@ -83,9 +85,9 @@ const { locale, setLocale } = useI18n()
   }
 
   &-active {
-    @apply border-b-2;
-    @apply rounded mt-[0.2rem];
     @apply border-teal-500;
+    @apply text-teal-500;
+    @apply dark:text-teal-400;
     @apply dark:border-white;
   }
 }

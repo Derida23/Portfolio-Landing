@@ -1,4 +1,5 @@
-import { abouts, abouts__id, experiences, projects } from "~/constants"
+import { abouts, abouts__id, experiences, } from "~/constants"
+import { projects } from "~/constants/projects"
 
 import {
   getQuery,

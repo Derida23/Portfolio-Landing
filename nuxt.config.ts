@@ -1,15 +1,19 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+
   app: {
     head: {
       titleTemplate: 'Arian Derida Hamami',
     }
   },
+
   imports: {
     dirs: ['stores', 'composables/api'],
   },
+
   css: ['~/assets/css/main.css'],
+
   modules: [
     '@nuxt/ui',
     '@vueuse/nuxt',
@@ -18,13 +22,16 @@ export default defineNuxtConfig({
     '@nuxtjs/color-mode',
     "@nuxtjs/i18n"
   ],
+
   colorMode: {
     preference: 'dark',
     classSuffix: ''
   },
+
   svgo: {
     componentPrefix: 'icon',
   },
+
   i18n: {
     // detectBrowserLanguage: {
     // useCookie: true,
@@ -42,4 +49,6 @@ export default defineNuxtConfig({
       { code: 'id', iso: 'id-ID', name: 'Bahasa', file: 'id.ts', isCatchallLocale: true }
     ],
   },
+
+  compatibilityDate: '2024-11-13',
 })
