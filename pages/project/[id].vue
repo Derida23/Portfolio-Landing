@@ -20,6 +20,7 @@ onMounted(() => {
 
 const router = useRouter()
 const { locale } = useI18n()
+
 const onNext = (id: number) => {
   const detailLength = dataAll.value?.data.projects.length ?? 0
   const detailIndex = dataAll.value?.data.projects.findIndex((project) => project.id === id)
@@ -33,7 +34,21 @@ const onNext = (id: number) => {
       router.push(`${locale.value === 'id' ? '/id' : ''}/project/${dataAll.value?.data.projects[0].id}`)
     }
   }
+}
 
+const onBack = (id: number) => {
+  const detailLength = dataAll.value?.data.projects.length ?? 0
+  const detailIndex = dataAll.value?.data.projects.findIndex((project) => project.id === id)
+
+  if (detailIndex !== undefined) {
+    const nextIndex = detailIndex - 1
+
+    if (nextIndex >= 0) {
+      router.push(`${locale.value === 'id' ? '/id' : ''}/project/${dataAll.value?.data.projects[nextIndex].id}`)
+    } else {
+      router.push(`${locale.value === 'id' ? '/id' : ''}/project/${dataAll.value?.data.projects[detailLength - 1].id}`)
+    }
+  }
 }
 </script>
 
@@ -54,9 +69,18 @@ const onNext = (id: number) => {
             </UTooltip>
           </NuxtLink>
         </div>
-        <p class="mb-3">{{ data?.data.profile_detail.content.first_paragraph }}</p>
-        <p class="mb-3">{{ data?.data.profile_detail.content.second_paragraph }}</p>
-        <p class="mb-6 lg:mb-10">{{ data?.data.profile_detail.content.third_paragraph }}</p>
+
+        <div v-if="locale === 'en'">
+          <p class="mb-3">{{ data?.data.profile_detail.content.first_paragraph }}</p>
+          <p class="mb-3">{{ data?.data.profile_detail.content.second_paragraph }}</p>
+          <p class="mb-6 lg:mb-10">{{ data?.data.profile_detail.content.third_paragraph }}</p>
+        </div>
+
+        <div v-else>
+          <p class="mb-3">{{ data?.data.profile_detail.content_id.first_paragraph }}</p>
+          <p class="mb-3">{{ data?.data.profile_detail.content_id.second_paragraph }}</p>
+          <p class="mb-6 lg:mb-10">{{ data?.data.profile_detail.content_id.third_paragraph }}</p>
+        </div>
 
         <img :src="`/images/${data?.data.profile_detail.image}`" :alt="data?.data.profile_detail.image"
           class="rounded-2xl" />
@@ -73,14 +97,20 @@ const onNext = (id: number) => {
     <div class="detail-navigation mt-10 ">
       <div class="detail-navigation-btn" @click="router.push(locale === 'id' ? '/id' : '/')">
         <div class="detail-navigation-wrapper">
-          <UIcon name="i-heroicons-arrow-long-left !mb-0" />
-          Homepage
+          <UIcon name="i-heroicons-home-20-solid" />
+          {{ $t('navigation.homepage') }}
         </div>
       </div>
-      <div class="detail-navigation-btn" @click="onNext(Number(data?.data.profile_detail.id))">
-        <div class="detail-navigation-wrapper">
-          Next Project
-          <UIcon name="i-heroicons-arrow-long-right !mb-0" />
+      <div class="flex items-center gap-x-2">
+        <div class="detail-navigation-btn" @click="onBack(Number(data?.data.profile_detail.id))">
+          <div class="detail-navigation-wrapper">
+            <UIcon name="i-heroicons-arrow-left-circle-16-solid" />
+          </div>
+        </div>
+        <div class="detail-navigation-btn" @click="onNext(Number(data?.data.profile_detail.id))">
+          <div class="detail-navigation-wrapper">
+            <UIcon name="i-heroicons-arrow-right-circle-16-solid" />
+          </div>
         </div>
       </div>
     </div>

@@ -85,7 +85,7 @@ export const experiences: IExperience[] = [
     roles: [
       {
         position: 'Graphic Designer',
-        date: '2018 sep - 2019 sug (fulltime)',
+        date: '2018 sep - 2019 aug (fulltime)',
         description: 'Finding a job as a fresh graduate in the technology field is quite challenging. Eventually, I decided to work as a graphic designer due to having acquired this skill since high school. I joined Manxi, a retail company for printers, working in the marketing team, handling various aspects of digital marketing, promotions, social media analysis.',
         description__id: 'Mencari pekerjaan sebagai lulusan baru di bidang teknologi cukup menantang. Akhirnya, saya memutuskan untuk bekerja sebagai desainer grafis karena telah memiliki keterampilan ini sejak SMA. Saya bergabung dengan Manxi, sebuah perusahaan ritel untuk printer, bekerja di tim pemasaran, menangani berbagai aspek pemasaran digital, promosi, dan analisis media sosial.',
         technology: ['Corel Draw', 'Adobe Photoshop', 'Adobe Illustrator', 'Social Media Optimization', 'Digital Marketing', 'Google Analytics', 'Content Creator']

@@ -23,6 +23,7 @@ export interface IProject {
   description: string
   description__id: string
   content: IContent
+  content_id: IContent
 }
 
 interface IContent {
