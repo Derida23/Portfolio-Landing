@@ -8,8 +8,7 @@ import { skills } from '@/constants'
     <div class="skill-wrapper">
       <div v-for="(skill, index) in skills" :key="index">
         <UTooltip :text="skill" :popper="{ arrow: false, placement: 'bottom-start', offsetDistance: 10 }">
-          <component :is="`Icon${skill}`" :filled="skill !== 'Next' && skill !== 'Express'"
-            class="!mb-0 text-slate-900 dark:text-slate-200 text-2xl sm:text-3xl" />
+          <component :is="`Icon${skill}`" :filled="skill !== 'Next' && skill !== 'Express'" class="skill-content" />
         </UTooltip>
       </div>
     </div>
@@ -37,6 +36,14 @@ import { skills } from '@/constants'
     @apply flex-row;
     @apply gap-4;
     @apply items-center;
+  }
+
+  &-content {
+    @apply !mb-0;
+    @apply text-slate-900;
+    @apply dark:text-slate-200;
+    @apply text-2xl;
+    @apply sm:text-3xl;
   }
 }
 </style>

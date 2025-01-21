@@ -3,11 +3,12 @@
 
 <template>
   <div class="container-gradient"></div>
+  <PartialNavbarMobile />
 
   <div class="container">
     <div class="content">
       <header class="content-wrapper">
-        <div>
+        <div class="relative">
           <LayoutHeader />
           <LayoutSkill />
           <LayoutNavigation />
@@ -25,11 +26,12 @@
 .container {
   @apply max-w-screen-xl;
   @apply min-h-screen;
-  @apply px-6 py-12;
+  @apply px-6;
+  @apply pt-12;
   @apply mx-auto;
   @apply font-sans;
   @apply md:px-12;
-  @apply md:py-20;
+  @apply md:pt-20;
   @apply lg:px-24;
   @apply lg:py-0;
 

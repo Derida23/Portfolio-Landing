@@ -17,7 +17,7 @@ onMounted(() => {
 
 </script>
 <template>
-  <div v-if="!loading && !pending" class="lg:w-full pb-10 lg:pb-14 xl:pb-24">
+  <div v-if="!loading && !pending" class="homepage-wrapper">
     <section id="about" class="homepage">
       <ContentAbout :abouts="data?.data.abouts" />
     </section>
@@ -31,7 +31,7 @@ onMounted(() => {
     </section>
   </div>
   <div v-else class="min-h-screen flex items-center justify-center">
-    <div class="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-emerald-800"></div>
+    <div class="homepage-loading"></div>
   </div>
 </template>
 
@@ -40,5 +40,22 @@ onMounted(() => {
   @apply pt-10;
   @apply md:pt-14;
   @apply xl:pt-24;
+
+  &-wrapper {
+    @apply lg:w-full;
+    @apply pb-10;
+    @apply lg:pb-14;
+    @apply xl:pb-24;
+  }
+
+  &-loading {
+    @apply animate-spin;
+    @apply rounded-full;
+    @apply h-32;
+    @apply w-32;
+    @apply border-t-2;
+    @apply border-b-2;
+    @apply border-emerald-800;
+  }
 }
 </style>

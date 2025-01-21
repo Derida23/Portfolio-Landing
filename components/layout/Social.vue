@@ -8,11 +8,13 @@ const { locale, setLocale } = useI18n()
   <div class="social">
     <div class="social-wrapper">
       <ClientOnly>
-        <div v-if="colorMode.value === 'light'" @click="colorMode.preference = 'dark'">
-          <IconLight class="social-icon social-icon-light cursor-pointer" />
-        </div>
-        <div v-else @click="colorMode.preference = 'light'">
-          <IconMoon class="social-icon social-icon-dark cursor-pointer" />
+        <div class="hidden lg:block ">
+          <div v-if="colorMode.value === 'light'" @click="colorMode.preference = 'dark'">
+            <IconLight class="social-icon social-icon-light cursor-pointer" />
+          </div>
+          <div v-else @click="colorMode.preference = 'light'">
+            <IconMoon class="social-icon social-icon-dark cursor-pointer" />
+          </div>
         </div>
       </ClientOnly>
       <NuxtLink to="https://github.com/Derida23" target="_blank">
@@ -24,6 +26,12 @@ const { locale, setLocale } = useI18n()
       <NuxtLink to="https://www.linkedin.com/in/arianderida/" target="_blank">
         <IconLinkedin class="social-icon social-icon-media" />
       </NuxtLink>
+      <NuxtLink
+        to="https://docs.google.com/document/d/1PdL_Jx2d44g9zHnY_mdRYw68LBDnhMA5Al4OczdPXaw/edit?tab=t.0#heading=h.y0ojq6k2gcqu"
+        target="_blank">
+        <IconResume2 class="social-icon social-icon-media" />
+      </NuxtLink>
+
     </div>
     <div class="lang invisible lg:visible">
       <div class="lang-wrapper" @click="setLocale('id')">
