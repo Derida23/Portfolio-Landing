@@ -1,7 +1,11 @@
 <script setup lang="ts">
 const colorMode = useColorMode()
 const { locale, setLocale } = useI18n()
+const language = ['id', 'en']
 
+const onLanguage = (value: string) => {
+  setLocale(value)
+}
 </script>
 
 <template>
@@ -34,6 +38,21 @@ const { locale, setLocale } = useI18n()
 
     </div>
     <div class="lang invisible lg:visible">
+      <USelectMenu v-model="locale" @update:modelValue="onLanguage" :options="language" :popper="{ placement: 'top' }"
+        selected-icon="i-heroicons-check-badge"
+        :ui-menu="{ option: { selectedIcon: { base: '!h-10 w-5 text-amber-500 dark:text-teal-300 flex-shrink-0' } } }">
+
+        <template #label>
+          <div class="uppercase">{{ locale }}</div>
+        </template>
+
+        <template #option="{ option }">
+          <span class="uppercase">{{ option }}</span>
+        </template>
+      </USelectMenu>
+
+      <!-- This section will be comment, maybe in the future i will uncomment this section -->
+      <!-- 
       <div class="lang-wrapper" @click="setLocale('id')">
         <div :class="{ 'lang-active': locale === 'id' }">
           <p class="text-center">Bahasa</p>
@@ -43,7 +62,9 @@ const { locale, setLocale } = useI18n()
         <div :class="{ 'lang-active': locale === 'en' }">
           <p class="text-center">English</p>
         </div>
-      </div>
+      </div> 
+      -->
+
     </div>
   </div>
 </template>

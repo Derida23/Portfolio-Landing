@@ -11,7 +11,7 @@ const onLanguage = (value: string) => {
 
 <template>
   <div class="absolute top-3 right-3">
-    <div class="flex items-center gap-x-4">
+    <div class="flex items-center gap-x-4 lg:hidden">
       <ClientOnly>
         <div class="block lg:hidden ">
           <div v-if="colorMode.value === 'light'" @click="colorMode.preference = 'dark'">
