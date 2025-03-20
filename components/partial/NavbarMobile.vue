@@ -4,7 +4,6 @@ const { locale, setLocale } = useI18n()
 const language = ['id', 'en']
 
 const onLanguage = (value: string) => {
-  console.log(value)
   setLocale(value)
 }
 
