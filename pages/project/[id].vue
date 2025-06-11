@@ -11,7 +11,7 @@ const { data: dataAll } = await getAll()
 const toggleStatus = () => {
   setTimeout(() => {
     loading.value = false;
-  }, 1000);
+  }, 600);
 };
 
 onMounted(() => {
@@ -53,71 +53,73 @@ const onBack = (id: number) => {
 </script>
 
 <template>
-  <div v-if="!loading && !pending" class="container">
-    <div class="detail">
-      <div class="detail-content">
-        <div class="detail-header">
-          <div>
-            <h1 class="detail-header-title">
-              {{ data?.data.profile_detail.brand }} · {{ data?.data.profile_detail.title }}
-            </h1>
-            <h2 class="text-xs uppercase">{{ data?.data.profile_detail.type }}</h2>
+  <transition name="fade" mode="out-in">
+    <div v-if="!loading && !pending" class="container">
+      <div class="detail">
+        <div class="detail-content">
+          <div class="detail-header">
+            <div>
+              <h1 class="detail-header-title">
+                {{ data?.data.profile_detail.brand }} · {{ data?.data.profile_detail.title }}
+              </h1>
+              <h2 class="text-xs uppercase">{{ data?.data.profile_detail.type }}</h2>
+            </div>
+            <NuxtLink to="https://github.com/Derida23" target="_blank">
+              <UTooltip text="Project" :popper="{ arrow: false, placement: 'bottom', offsetDistance: 10 }">
+                <IconGithub class="detail-header-github" />
+              </UTooltip>
+            </NuxtLink>
           </div>
+
+          <div v-if="locale === 'en'">
+            <p class="mb-3">{{ data?.data.profile_detail.content.first_paragraph }}</p>
+            <p class="mb-3">{{ data?.data.profile_detail.content.second_paragraph }}</p>
+            <p class="mb-6 lg:mb-10">{{ data?.data.profile_detail.content.third_paragraph }}</p>
+          </div>
+
+          <div v-else>
+            <p class="mb-3">{{ data?.data.profile_detail.content_id.first_paragraph }}</p>
+            <p class="mb-3">{{ data?.data.profile_detail.content_id.second_paragraph }}</p>
+            <p class="mb-6 lg:mb-10">{{ data?.data.profile_detail.content_id.third_paragraph }}</p>
+          </div>
+
+          <img :src="`/images/${data?.data.profile_detail.image}`" :alt="data?.data.profile_detail.image"
+            class="rounded-2xl" />
+        </div>
+        <div class="mt-8 text-center block lg:hidden">
           <NuxtLink to="https://github.com/Derida23" target="_blank">
             <UTooltip text="Project" :popper="{ arrow: false, placement: 'bottom', offsetDistance: 10 }">
-              <IconGithub class="detail-header-github" />
+              <IconGithub class="detail-header-github-footer" />
+              <span class="detail-header-text">Github Repository</span>
             </UTooltip>
           </NuxtLink>
         </div>
-
-        <div v-if="locale === 'en'">
-          <p class="mb-3">{{ data?.data.profile_detail.content.first_paragraph }}</p>
-          <p class="mb-3">{{ data?.data.profile_detail.content.second_paragraph }}</p>
-          <p class="mb-6 lg:mb-10">{{ data?.data.profile_detail.content.third_paragraph }}</p>
-        </div>
-
-        <div v-else>
-          <p class="mb-3">{{ data?.data.profile_detail.content_id.first_paragraph }}</p>
-          <p class="mb-3">{{ data?.data.profile_detail.content_id.second_paragraph }}</p>
-          <p class="mb-6 lg:mb-10">{{ data?.data.profile_detail.content_id.third_paragraph }}</p>
-        </div>
-
-        <img :src="`/images/${data?.data.profile_detail.image}`" :alt="data?.data.profile_detail.image"
-          class="rounded-2xl" />
       </div>
-      <div class="mt-8 text-center block lg:hidden">
-        <NuxtLink to="https://github.com/Derida23" target="_blank">
-          <UTooltip text="Project" :popper="{ arrow: false, placement: 'bottom', offsetDistance: 10 }">
-            <IconGithub class="detail-header-github-footer" />
-            <span class="detail-header-text">Github Repository</span>
-          </UTooltip>
-        </NuxtLink>
-      </div>
-    </div>
-    <div class="detail-navigation mt-10 ">
-      <div class="detail-navigation-btn" @click="router.push(locale === 'id' ? '/id' : '/')">
-        <div class="detail-navigation-wrapper">
-          <UIcon name="i-heroicons-home-20-solid" />
-          {{ $t('navigation.homepage') }}
-        </div>
-      </div>
-      <div class="flex items-center gap-x-2">
-        <div class="detail-navigation-btn" @click="onBack(Number(data?.data.profile_detail.id))">
+      <div class="detail-navigation mt-10 ">
+        <div class="detail-navigation-btn" @click="router.push(locale === 'id' ? '/id' : '/')">
           <div class="detail-navigation-wrapper">
-            <UIcon name="i-heroicons-arrow-left-circle-16-solid" />
+            <UIcon name="i-heroicons-home-20-solid" />
+            {{ $t('navigation.homepage') }}
           </div>
         </div>
-        <div class="detail-navigation-btn" @click="onNext(Number(data?.data.profile_detail.id))">
-          <div class="detail-navigation-wrapper">
-            <UIcon name="i-heroicons-arrow-right-circle-16-solid" />
+        <div class="flex items-center gap-x-2">
+          <div class="detail-navigation-btn" @click="onBack(Number(data?.data.profile_detail.id))">
+            <div class="detail-navigation-wrapper">
+              <UIcon name="i-heroicons-arrow-left-circle-16-solid" />
+            </div>
+          </div>
+          <div class="detail-navigation-btn" @click="onNext(Number(data?.data.profile_detail.id))">
+            <div class="detail-navigation-wrapper">
+              <UIcon name="i-heroicons-arrow-right-circle-16-solid" />
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div v-else class="detail-wrapper">
-    <div class="detail-loading"></div>
-  </div>
+    <div v-else class="detail-wrapper">
+      <div class="detail-loading"></div>
+    </div>
+  </transition>
 </template>
 
 
@@ -220,5 +222,15 @@ const onBack = (id: number) => {
       @apply lg:mt-0;
     }
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>

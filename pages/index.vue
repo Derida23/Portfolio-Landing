@@ -8,7 +8,7 @@ const { data, pending } = await getAll(locale.value)
 const toggleStatus = () => {
   setTimeout(() => {
     loading.value = false;
-  }, 1000);
+  }, 600);
 };
 
 onMounted(() => {
@@ -17,22 +17,24 @@ onMounted(() => {
 
 </script>
 <template>
-  <div v-if="!loading && !pending" class="homepage-wrapper">
-    <section id="about" class="homepage">
-      <ContentAbout :abouts="data?.data.abouts" />
-    </section>
+  <transition name="fade" mode="out-in">
+    <div v-if="!loading && !pending" class="homepage-wrapper">
+      <section id="about" class="homepage">
+        <ContentAbout :abouts="data?.data.abouts" />
+      </section>
 
-    <section id="experience" class="homepage">
-      <ContentExperience :experiences="data?.data.experiences" />
-    </section>
+      <section id="experience" class="homepage">
+        <ContentExperience :experiences="data?.data.experiences" />
+      </section>
 
-    <section id="project" class="homepage">
-      <ContentProject :projects="data?.data.projects" />
-    </section>
-  </div>
-  <div v-else class="min-h-screen flex items-center justify-center">
-    <div class="homepage-loading"></div>
-  </div>
+      <section id="project" class="homepage">
+        <ContentProject :projects="data?.data.projects" />
+      </section>
+    </div>
+    <div v-else class="min-h-screen flex items-center justify-center">
+      <div class="homepage-loading"></div>
+    </div>
+  </transition>
 </template>
 
 <style scoped lang="postcss">
@@ -57,5 +59,15 @@ onMounted(() => {
     @apply border-b-2;
     @apply border-emerald-800;
   }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
