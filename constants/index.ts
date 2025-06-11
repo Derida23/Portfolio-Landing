@@ -22,7 +22,7 @@ export const experiences: IExperience[] = [
     roles: [
       {
         position: 'Frontend Engineer',
-        date: '2022 feb - current (fulltime)',
+        date: '2022 feb - 2025 jun (fulltime)',
         description: 'Reliable Digital Trust. Trusted by over 40 million individuals & 2600 companies in Indonesia. My role involves creating custom applications on the frontend side to meet the needs of external companies, especially for digital signatures and electronic stamps (e-meterai), as well as contributing to the development of internal tools.',
         description__id: 'Percaya yang Dapat Diandalkan untuk Dunia Digital. Dipercayai oleh lebih dari 40 juta individu & 2600 perusahaan di Indonesia. Peran saya melibatkan pembuatan aplikasi khusus di sisi frontend untuk memenuhi kebutuhan perusahaan eksternal, terutama untuk tanda tangan digital dan stempel elektronik (e-meterai), serta berkontribusi pada pengembangan alat internal.',
         technology: ['Vue JS', 'Nuxt JS', 'Typescript', 'Tailwind', 'Vuetify', 'Pinia', 'Nuxt-UI', 'Vuelidate', 'Vee Validate', 'Histoire', 'Nuxt Vitest', 'Vuex']
