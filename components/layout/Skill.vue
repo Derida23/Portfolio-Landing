@@ -7,8 +7,9 @@ import { skills } from '@/constants'
     <h1 class="skill-title">{{ $t('header.skill') }}</h1>
     <div class="skill-wrapper">
       <div v-for="(skill, index) in skills" :key="index">
-        <UTooltip :text="skill" :popper="{ arrow: false, placement: 'bottom-start', offsetDistance: 10 }">
-          <component :is="`Icon${skill}`" :filled="skill !== 'Next' && skill !== 'Express'" class="skill-content" />
+        <UTooltip :text="skill" :popper="{ arrow: false, placement: 'bottom', offsetDistance: 10 }">
+          <component :is="`Icon${skill}`" :filled="skill !== 'Next' && skill !== 'Express'"
+            class="skill-content cursor-crosshair" />
         </UTooltip>
       </div>
     </div>
