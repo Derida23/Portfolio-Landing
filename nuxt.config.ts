@@ -33,14 +33,7 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    // detectBrowserLanguage: {
-    // useCookie: true,
-    // cookieKey: 'i18n_redirected',
-    // redirectOn: 'root',
-    // },
-    // strategy: 'prefix_except_default ',
     defaultLocale: 'en',
-    lazy: true,
     langDir: 'locales',
     customRoutes: 'config',
     baseUrl: 'http://localhost:3000',
